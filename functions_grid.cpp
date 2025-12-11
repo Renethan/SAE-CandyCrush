@@ -1,17 +1,13 @@
 #include <iostream>
 #include <vector>
-#include <header.h>
+#include "header.h"
+#include <ctime>
 
 using namespace std;
 
 typedef vector <unsigned> line; // un type représentant une ligne de la grille
 typedef vector <line> mat; // un type représentant la grille
 
-
-struct maPosition {
-    unsigned abs;
-    unsigned ord;
-}; // une position dans la girlle
 
 
 const unsigned KReset   (0);

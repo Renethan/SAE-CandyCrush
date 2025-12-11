@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <header.h>
+#include "header.h"
 
 using namespace std;
 
@@ -8,30 +8,40 @@ typedef vector <unsigned> line; // un type représentant une ligne de la grille
 typedef vector <line> mat; // un type représentant la grille
 
 
-struct maPosition {
-    unsigned abs;
-    unsigned ord;
-}; // une position dans la girlle
+int main(){
+    mat grille;
+    initGrid(grille,8);
 
-const unsigned KReset   (0);
-const unsigned KNoir    (30);
-const unsigned KRouge   (31);
-const unsigned KVert    (32);
-const unsigned KJaune   (33);
-const unsigned KBleu    (34);
-const unsigned KMagenta (35);
-const unsigned KCyan    (36);
-const int KNbcandies = 9;
+    unsigned coupMax = 20;
+    unsigned nbCoup = 0;
+    maPosition pos;
+    char dir;
 
+    while(nbCoup < coupMax){
+        displayGrid(grille);
+        cout << endl << "Saisir l'abscisse des coordonnees : " ;
+        cin >> pos.abs;
+        cout << endl << "Saisir l'ordonnee des coordonnees : " ;
+        cin >> pos.ord;
 
+        cout << endl << "Entrez 'Q' , 'E' , 'S' ou 'Z' pour vous deplacer respectivement "
+                "vers la gauche , droite , en bas ou en haut. " << endl;
+        cout << endl << "Saisir la direction : " ;
+        cin >> dir;
 
-int main()
-{
-    mat grille ;
+        makeAMove(grille,pos,dir);
 
-    initGrid(grille, 4) ;
+        unsigned nbHM = 0;
 
-    displayGrid(grille) ;
-
-    return 0 ;
+        while(atLeastThreeInAColumn(grille,pos,nbHM)){ // Vérif et élim des colonnes
+            atLeastThreeInAColumn(grille,pos,nbHM);
+            removalInColumn(grille,pos,nbHM);
+        }
+        while(atLeastThreeInARow(grille,pos,nbHM)){ // Vérif et élim des lignes
+            atLeastThreeInARow(grille,pos,nbHM);
+            removalInRow(grille,pos,nbHM);
+        }
+        nbCoup++;
+    }
+    return 0;
 }
