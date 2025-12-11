@@ -10,7 +10,7 @@ typedef vector <line> mat; // un type représentant la grille
 
 int main(){
     mat grille;
-    initGrid(grille,8);
+    initGrid(grille,5);
 
     unsigned coupMax = 20;
     unsigned nbCoup = 0;
@@ -24,22 +24,33 @@ int main(){
         cout << endl << "Saisir l'ordonnee des coordonnees : " ;
         cin >> pos.ord;
 
-        cout << endl << "Entrez 'Q' , 'E' , 'S' ou 'Z' pour vous deplacer respectivement "
-                "vers la gauche , droite , en bas ou en haut. " << endl;
+        cout << endl << "Entrez 'Z' , 'Q' , 'S' ou 'D' pour vous deplacer respectivement "
+                "vers le haut , à gauche , en bas ou à droite . " << endl;
         cout << endl << "Saisir la direction : " ;
         cin >> dir;
 
         makeAMove(grille,pos,dir);
-
         unsigned nbHM = 0;
-
-        while(atLeastThreeInAColumn(grille,pos,nbHM)){ // Vérif et élim des colonnes
-            atLeastThreeInAColumn(grille,pos,nbHM);
-            removalInColumn(grille,pos,nbHM);
+        
+        maPosition detecteur;
+        while(true){ // Vérif et élim des colonnes
+            atLeastThreeInAColumn(grille,detecteur,nbHM);
+            if(!atLeastThreeInAColumn(grille,detecteur,nbHM)) break;
+            removalInColumn(grille,detecteur,nbHM);
         }
-        while(atLeastThreeInARow(grille,pos,nbHM)){ // Vérif et élim des lignes
-            atLeastThreeInARow(grille,pos,nbHM);
-            removalInRow(grille,pos,nbHM);
+
+        maPosition detecteur2;
+        int g = 0;
+        while(true){ // Vérif et élim des colonnes
+            atLeastThreeInARow(grille,detecteur2,nbHM);
+            if(!atLeastThreeInARow(grille,detecteur2,nbHM)) break;
+            cout << "atLeast3InARow" << endl;
+            removalInRow(grille,detecteur2,nbHM);
+            g++;
+            if(g > 20) {
+                cout << "overflow exit" << endl;
+                break;
+            }
         }
         nbCoup++;
     }

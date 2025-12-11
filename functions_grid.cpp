@@ -61,7 +61,9 @@ void displayLine( line & ligne ){
         //affiche un espace si un 0 est présent
         case 0:
 
-            cout << " " << " " <<" ";
+            couleur(KReset);
+
+            cout << " " << "|"<< ligne[i] << "|" <<" ";
 
             break;
 

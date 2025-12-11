@@ -13,10 +13,10 @@ struct maPosition {
 // une position dans la girlle
 
 void makeAMove (mat & grid, const maPosition & pos, const char & direction){
-    if(direction == 'Z') swap(grid[pos.abs][pos.ord], grid[pos.abs][pos.ord - 1]);
-    if(direction == 'S') swap(grid[pos.abs][pos.ord], grid[pos.abs][pos.ord + 1]);
-    if(direction == 'Q') swap(grid[pos.abs][pos.ord], grid[pos.abs - 1][pos.ord]);
-    if(direction == 'D') swap(grid[pos.abs][pos.ord], grid[pos.abs + 1][pos.ord]);
+    if(direction == 'Z') swap(grid[pos.ord][pos.abs], grid[pos.ord - 1][pos.abs]);
+    if(direction == 'S') swap(grid[pos.ord][pos.abs], grid[pos.ord + 1][pos.abs]);
+    if(direction == 'Q') swap(grid[pos.ord][pos.abs], grid[pos.ord][pos.abs - 1]);
+    if(direction == 'D') swap(grid[pos.ord][pos.abs], grid[pos.ord][pos.abs + 1]);
 }
 
 bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany){
@@ -25,13 +25,13 @@ bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany)
             unsigned compte = 1;
             size_t m = j+1 ;
             while(m < grid.size()){
-                if(grid[i][m] != grid[i][j]) break;
+                if(grid[j][m] != grid[j][i]) break;
                 compte++;
                 m++;
             }
             if(compte >= 3){
-                pos.abs = j;
-                pos.ord = i;
+                pos.abs = i;
+                pos.ord = j;
                 howMany = compte;
                 return true;
             }
@@ -41,18 +41,19 @@ bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany)
 }
 
 bool atLeastThreeInAColumn (const mat & grid, maPosition & pos, unsigned & howMany){
-    for(size_t j = 0; j<grid.size();j++){
-        for(size_t i = 0; i<grid.size();i++){
+    cout << "IN COLUMN" << endl;
+    for(size_t i = 0; i<grid.size();i++){
+        for(size_t j = 0; j<grid.size();j++){
             unsigned compte = 1;
-            size_t m = i+1 ;
+            size_t m = j+1 ;
             while(m < grid.size()){
-                if(grid[m][j] != grid[i][j]) break;
+                if(grid[j][i] != grid[m][i] || grid[j][i] == 0) break;  // ||grid[i][j] == 0  temp debug
                 compte++;
                 m++;
             }
             if(compte >= 3){
-                pos.abs = j;
-                pos.ord = i;
+                pos.ord = j;
+                pos.abs = i;
                 howMany = compte;
                 return true;
             }
@@ -60,22 +61,25 @@ bool atLeastThreeInAColumn (const mat & grid, maPosition & pos, unsigned & howMa
     }
     return false;
 }
+
 void removalInColumn(mat & grid, const maPosition & pos, unsigned howMany){
-    size_t i = pos.abs;
-    while(i + howMany < grid.size()){
-        grid[i][pos.ord] = grid[i+howMany][pos.ord];
-        i++;
+    size_t j = pos.ord;
+    while(j + howMany < grid.size()){
+        grid[j][pos.abs] = grid[j+howMany][pos.abs];
+        j++;
     }
-    while(i < grid.size()){
-        grid[i][pos.ord] = 0;
-        i++;
+    while(j < grid.size()){
+        grid[j][pos.abs] = 0;
+        j++;
     }
 }
 
 void removalInRow(mat & grid, const maPosition & pos, unsigned howMany){
-    size_t i = pos.ord;
-    while(i < pos.ord + howMany){
-        removalInColumn(grid,maPosition{pos.abs,i},1);
+    cout << "Row pos "<< pos.ord << pos.abs << endl;
+    size_t i = pos.abs;
+    while(i + howMany < grid.size()){
+        removalInColumn(grid,maPosition{pos.ord,i},1);
+        cout << "Row pos "<< pos.ord << i << endl;
         i++;
     }
 }
