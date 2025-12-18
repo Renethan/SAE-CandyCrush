@@ -14,6 +14,7 @@ int main(){
 
     unsigned coupMax = 20;
     unsigned nbCoup = 0;
+    unsigned nbPts = 0;
     maPosition pos;
     char dir;
 
@@ -55,15 +56,18 @@ int main(){
         while(true){ // Vérif et élim des colonnes
             atLeastThreeInAColumn(grille,detecteur,nbHM);
             if(!atLeastThreeInAColumn(grille,detecteur,nbHM)) break;
+            nbPts ++ ;
             removalInColumn(grille,detecteur,nbHM);
         }
 
         while(true){ // Vérif et élim des lignes
             atLeastThreeInARow(grille,detecteur,nbHM);
             if(!atLeastThreeInARow(grille,detecteur,nbHM)) break;
+            nbPts ++ ;
             removalInRow(grille,detecteur,nbHM);
         }
         nbCoup++;
+        cout << "Nombre de points : " << nbPts << " - Coups restants : " << coupMax - nbCoup  << endl;
     }
     return 0;
 }
