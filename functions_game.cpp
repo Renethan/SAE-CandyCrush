@@ -20,10 +20,10 @@ void makeAMove (mat & grid, const maPosition & pos, const char & direction){
 }
 
 bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany){
-    for(size_t i = 0; i<grid.size();i++){
-        for(size_t j = 0; j<grid.size();j++){
+    for(size_t j = 0; j<grid.size();j++){
+        for(size_t i = 0; i<grid.size();i++){
             unsigned compte = 1;
-            size_t m = j+1 ;
+            size_t m = i+1 ;
             while(m < grid.size()){
                 if(grid[j][m] != grid[j][i]) break;
                 compte++;
@@ -41,13 +41,12 @@ bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany)
 }
 
 bool atLeastThreeInAColumn (const mat & grid, maPosition & pos, unsigned & howMany){
-    cout << "IN COLUMN" << endl;
     for(size_t i = 0; i<grid.size();i++){
         for(size_t j = 0; j<grid.size();j++){
             unsigned compte = 1;
             size_t m = j+1 ;
             while(m < grid.size()){
-                if(grid[j][i] != grid[m][i] || grid[j][i] == 0) break;  // ||grid[i][j] == 0  temp debug
+                if(grid[j][i] != grid[m][i]) break;
                 compte++;
                 m++;
             }
@@ -69,17 +68,15 @@ void removalInColumn(mat & grid, const maPosition & pos, unsigned howMany){
         j++;
     }
     while(j < grid.size()){
-        grid[j][pos.abs] = 0;
+        grid[j][pos.abs] = rand() % 9 +1;
         j++;
     }
 }
 
 void removalInRow(mat & grid, const maPosition & pos, unsigned howMany){
-    cout << "Row pos "<< pos.ord << pos.abs << endl;
     size_t i = pos.abs;
-    while(i + howMany < grid.size()){
-        removalInColumn(grid,maPosition{pos.ord,i},1);
-        cout << "Row pos "<< pos.ord << i << endl;
+    while(i < pos.abs + howMany){
+        removalInColumn(grid,maPosition{i,pos.ord},1);
         i++;
     }
 }

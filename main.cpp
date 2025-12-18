@@ -17,6 +17,23 @@ int main(){
     maPosition pos;
     char dir;
 
+    unsigned nbHM = 0;
+    maPosition detecteur;
+    detecteur.abs = 0;
+    detecteur.ord = 0;
+    while(true){ // Vérif et élim des colonnes
+        atLeastThreeInAColumn(grille,detecteur,nbHM);
+        if(!atLeastThreeInAColumn(grille,detecteur,nbHM)) break;
+        removalInColumn(grille,detecteur,nbHM);
+    }
+
+    while(true){ // Vérif et élim des lignes
+        atLeastThreeInARow(grille,detecteur,nbHM);
+        if(!atLeastThreeInARow(grille,detecteur,nbHM)) break;
+        removalInRow(grille,detecteur,nbHM);
+    }
+    
+
     while(nbCoup < coupMax){
         displayGrid(grille);
         cout << endl << "Saisir l'abscisse des coordonnees : " ;
@@ -25,32 +42,26 @@ int main(){
         cin >> pos.ord;
 
         cout << endl << "Entrez 'Z' , 'Q' , 'S' ou 'D' pour vous deplacer respectivement "
-                "vers le haut , à gauche , en bas ou à droite . " << endl;
+                "vers le haut , a gauche , en bas ou a droite . " << endl;
         cout << endl << "Saisir la direction : " ;
         cin >> dir;
 
         makeAMove(grille,pos,dir);
-        unsigned nbHM = 0;
         
-        maPosition detecteur;
+        nbHM = 0;
+        detecteur.abs = 0;
+        detecteur.ord = 0;
+        
         while(true){ // Vérif et élim des colonnes
             atLeastThreeInAColumn(grille,detecteur,nbHM);
             if(!atLeastThreeInAColumn(grille,detecteur,nbHM)) break;
             removalInColumn(grille,detecteur,nbHM);
         }
 
-        maPosition detecteur2;
-        int g = 0;
-        while(true){ // Vérif et élim des colonnes
-            atLeastThreeInARow(grille,detecteur2,nbHM);
-            if(!atLeastThreeInARow(grille,detecteur2,nbHM)) break;
-            cout << "atLeast3InARow" << endl;
-            removalInRow(grille,detecteur2,nbHM);
-            g++;
-            if(g > 20) {
-                cout << "overflow exit" << endl;
-                break;
-            }
+        while(true){ // Vérif et élim des lignes
+            atLeastThreeInARow(grille,detecteur,nbHM);
+            if(!atLeastThreeInARow(grille,detecteur,nbHM)) break;
+            removalInRow(grille,detecteur,nbHM);
         }
         nbCoup++;
     }
