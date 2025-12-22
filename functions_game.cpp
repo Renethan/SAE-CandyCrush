@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "header.h"
 
 using namespace std;
 
@@ -79,4 +80,69 @@ void removalInRow(mat & grid, const maPosition & pos, unsigned howMany){
         removalInColumn(grid,maPosition{i,pos.ord},1);
         i++;
     }
+}
+
+void partie(const size_t & gridSize, unsigned coupMax , unsigned ptsRequis){
+    mat grille;
+    initGrid(grille,gridSize);
+
+    unsigned nbCoup = 0;
+    unsigned nbPts = 0;
+    maPosition pos;
+    char dir;
+
+    unsigned nbHM = 0;
+    maPosition detecteur;
+    detecteur.abs = 0;
+    detecteur.ord = 0;
+    while(true){ // Vérif et élim des colonnes
+        atLeastThreeInAColumn(grille,detecteur,nbHM);
+        if(!atLeastThreeInAColumn(grille,detecteur,nbHM)) break;
+        removalInColumn(grille,detecteur,nbHM);
+    }
+
+    while(true){ // Vérif et élim des lignes
+        atLeastThreeInARow(grille,detecteur,nbHM);
+        if(!atLeastThreeInARow(grille,detecteur,nbHM)) break;
+        removalInRow(grille,detecteur,nbHM);
+    }
+    
+
+    while(nbCoup < coupMax){
+        displayGrid(grille);
+        cout << "Points requis : " << ptsRequis << endl;
+        cout << endl << "Saisir l'abscisse des coordonnees : " ;
+        cin >> pos.abs;
+        cout << endl << "Saisir l'ordonnee des coordonnees : " ;
+        cin >> pos.ord;
+
+        cout << endl << "Entrez 'Z' , 'Q' , 'S' ou 'D' pour vous deplacer respectivement "
+                "vers le haut , a gauche , en bas ou a droite . " << endl;
+        cout << endl << "Saisir la direction : " ;
+        cin >> dir;
+
+        makeAMove(grille,pos,dir);
+        
+        nbHM = 0;
+        detecteur.abs = 0;
+        detecteur.ord = 0;
+        
+        while(true){ // Vérif et élim des colonnes
+            atLeastThreeInAColumn(grille,detecteur,nbHM);
+            if(!atLeastThreeInAColumn(grille,detecteur,nbHM)) break;
+            if(nbHM >= 3) nbPts = nbPts + (nbHM - 2) ;
+            removalInColumn(grille,detecteur,nbHM);
+        }
+
+        while(true){ // Vérif et élim des lignes
+            atLeastThreeInARow(grille,detecteur,nbHM);
+            if(!atLeastThreeInARow(grille,detecteur,nbHM)) break;
+            if(nbHM >= 3) nbPts = nbPts + (nbHM - 2) ;
+            removalInRow(grille,detecteur,nbHM);
+        }
+        nbCoup++;
+        cout << "Nombre de points : " << nbPts << " - Coups restants : " << coupMax - nbCoup  << endl;
+    }
+    if(nbPts >= ptsRequis) cout << "Victoire ! Avec " << nbPts << " points." << endl;
+    else cout << "Défaite ! Avec " << nbPts << " points sur " << ptsRequis << endl;
 }

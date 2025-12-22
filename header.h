@@ -17,5 +17,6 @@ bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany)
 bool atLeastThreeInAColumn (const mat & grid, maPosition & pos, unsigned & howMany);
 void removalInColumn(mat & grid, const maPosition & pos, unsigned howMany);
 void removalInRow(mat & grid, const maPosition & pos, unsigned howMany);
+void partie(const size_t & gridSize, unsigned coupMax , unsigned ptsRequis);
 
 #endif // HEADER_H
