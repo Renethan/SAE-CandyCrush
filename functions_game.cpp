@@ -5,8 +5,9 @@
 
 using namespace std;
 
-typedef vector <unsigned> line; // un type représentant une ligne de la grille
-typedef vector <line> mat; // un type représentant la grille
+typedef vector <unsigned> line; // Type représentant une ligne de la grille
+typedef vector <line> mat; // Type représentant la grille , aussi utilisé pour la gestion des niveaux
+
 struct maPosition {
     unsigned abs;
     unsigned ord;
@@ -83,11 +84,11 @@ void removalInRow(mat & grid, const maPosition & pos, unsigned howMany){
     }
 }
 
-void partie(const size_t & gridSize, unsigned coupMax , unsigned ptsRequis , int nbBonbons){
-
-    KNbcandies = nbBonbons;
+//Lance une partie. Prends en paramètre un vecteur 'config' <unsigned> dont les valeurs sont : [gridSize / nbCoups / nbPoints / nbBonbons]
+void partie(vector<unsigned> config ){
+    KNbcandies = config[3];
     mat grille;
-    initGrid(grille,gridSize);
+    initGrid(grille,config[0]);
 
     unsigned nbCoup = 0;
     unsigned nbPts = 0;
@@ -98,22 +99,27 @@ void partie(const size_t & gridSize, unsigned coupMax , unsigned ptsRequis , int
     maPosition detecteur;
     detecteur.abs = 0;
     detecteur.ord = 0;
-    while(true){ // Vérif et élim des colonnes
-        atLeastThreeInAColumn(grille,detecteur,nbHM);
-        if(!atLeastThreeInAColumn(grille,detecteur,nbHM)) break;
-        removalInColumn(grille,detecteur,nbHM);
-    }
 
-    while(true){ // Vérif et élim des lignes
-        atLeastThreeInARow(grille,detecteur,nbHM);
-        if(!atLeastThreeInARow(grille,detecteur,nbHM)) break;
-        removalInRow(grille,detecteur,nbHM);
+    while(true){ // Vérif et élim des colonnes et des lignes
+        bool ligne = false;
+        bool colonne = false;
+
+        if(atLeastThreeInAColumn(grille,detecteur,nbHM)){
+            removalInColumn(grille,detecteur,nbHM);
+            colonne = true;
+        }
+
+        if(atLeastThreeInARow(grille,detecteur,nbHM)){
+            removalInRow(grille,detecteur,nbHM);
+            ligne = true;
+        }
+
+        if(!ligne && !colonne) break;
     }
     
-
-    while(nbCoup < coupMax){
+    cout << "Points requis : " << config[2] << endl;
+    while(nbCoup < config[1]){
         displayGrid(grille);
-        cout << "Points requis : " << ptsRequis << endl;
         cout << endl << "Saisir l'abscisse des coordonnees : " ;
         cin >> pos.abs;
         cout << endl << "Saisir l'ordonnee des coordonnees : " ;
@@ -130,22 +136,29 @@ void partie(const size_t & gridSize, unsigned coupMax , unsigned ptsRequis , int
         detecteur.abs = 0;
         detecteur.ord = 0;
         
-        while(true){ // Vérif et élim des colonnes
-            atLeastThreeInAColumn(grille,detecteur,nbHM);
-            if(!atLeastThreeInAColumn(grille,detecteur,nbHM)) break;
+
+        while(true){ // Vérif et élim des colonnes et des lignes
+        bool ligne = false;
+        bool colonne = false;
+
+        if(atLeastThreeInAColumn(grille,detecteur,nbHM)){
             if(nbHM >= 3) nbPts = nbPts + (nbHM - 2) ;
             removalInColumn(grille,detecteur,nbHM);
+            colonne = true;
         }
 
-        while(true){ // Vérif et élim des lignes
-            atLeastThreeInARow(grille,detecteur,nbHM);
-            if(!atLeastThreeInARow(grille,detecteur,nbHM)) break;
+        if(atLeastThreeInARow(grille,detecteur,nbHM)){
             if(nbHM >= 3) nbPts = nbPts + (nbHM - 2) ;
             removalInRow(grille,detecteur,nbHM);
+            ligne = true;
         }
+
+        if(!ligne && !colonne) break;
+        }
+
         nbCoup++;
-        cout << "Nombre de points : " << nbPts << " - Coups restants : " << coupMax - nbCoup  << endl;
+        cout << "Nombre de points : " << nbPts << "/" << config[2] << " - Coups restants : " << config[1] - nbCoup  << endl;
     }
-    if(nbPts >= ptsRequis) cout << "Victoire ! Avec " << nbPts << " points." << endl;
-    else cout << "Défaite ! Avec " << nbPts << " points sur " << ptsRequis << endl;
+    if(nbPts >= config[2]) cout << "Victoire ! Avec " << nbPts << " points." << endl;
+    else cout << "Défaite ! Avec " << nbPts << " points sur " << config[2] << endl;
 }

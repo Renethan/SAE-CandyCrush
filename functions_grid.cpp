@@ -5,8 +5,8 @@
 
 using namespace std;
 
-typedef vector <unsigned> line; // un type représentant une ligne de la grille
-typedef vector <line> mat; // un type représentant la grille
+typedef vector <unsigned> line; // Type représentant une ligne de la grille
+typedef vector <line> mat; // Type représentant la grille , aussi utilisé pour la gestion des niveaux
 
 
 
