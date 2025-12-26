@@ -18,7 +18,7 @@ const unsigned KJaune   (33);
 const unsigned KBleu    (34);
 const unsigned KMagenta (35);
 const unsigned KCyan    (36);
-const int KNbcandies = 9;
+int KNbcandies = 9;
 
 void clearScreen () {
     cout << "\033[H\033[2J";
@@ -71,7 +71,7 @@ void displayLine( line & ligne ){
 
         case 1:
 
-            couleur(30);
+            couleur(KNoir);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -80,7 +80,7 @@ void displayLine( line & ligne ){
 
         case 2:
 
-            couleur(37);
+            couleur(KRouge);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -89,7 +89,7 @@ void displayLine( line & ligne ){
 
         case 3:
 
-            couleur(32);
+            couleur(KVert);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -98,7 +98,7 @@ void displayLine( line & ligne ){
 
         case 4:
 
-            couleur(33);
+            couleur(KJaune);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -107,7 +107,7 @@ void displayLine( line & ligne ){
 
         case 5:
 
-            couleur(34);
+            couleur(KBleu);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -116,7 +116,7 @@ void displayLine( line & ligne ){
 
         case 6:
 
-            couleur(36);
+            couleur(KMagenta);
 
            cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -125,7 +125,7 @@ void displayLine( line & ligne ){
 
         case 7:
 
-            couleur(30);
+            couleur(KCyan);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -134,7 +134,7 @@ void displayLine( line & ligne ){
 
         case 8:
 
-            couleur(37);
+            couleur(KReset);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -143,7 +143,7 @@ void displayLine( line & ligne ){
 
         case 9:
 
-            couleur(32);
+            couleur(KNoir);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 

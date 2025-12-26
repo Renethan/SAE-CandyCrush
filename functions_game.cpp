@@ -2,6 +2,7 @@
 #include <vector>
 #include "header.h"
 
+
 using namespace std;
 
 typedef vector <unsigned> line; // un type représentant une ligne de la grille
@@ -69,7 +70,7 @@ void removalInColumn(mat & grid, const maPosition & pos, unsigned howMany){
         j++;
     }
     while(j < grid.size()){
-        grid[j][pos.abs] = rand() % 9 +1;
+        grid[j][pos.abs] = rand() % KNbcandies +1;
         j++;
     }
 }
@@ -82,7 +83,9 @@ void removalInRow(mat & grid, const maPosition & pos, unsigned howMany){
     }
 }
 
-void partie(const size_t & gridSize, unsigned coupMax , unsigned ptsRequis){
+void partie(const size_t & gridSize, unsigned coupMax , unsigned ptsRequis , int nbBonbons){
+
+    KNbcandies = nbBonbons;
     mat grille;
     initGrid(grille,gridSize);
 
