@@ -13,6 +13,9 @@ struct maPosition {
     unsigned ord;
 };
 
+int progression = 1;
+mat configNiveaux = {{7,20,10,4},{6,15,5,5},{7,20,18,3},{8,25,10,8}};
+
 // une position dans la girlle
 
 void makeAMove (mat & grid, const maPosition & pos, const char & direction){
@@ -117,8 +120,8 @@ void partie(vector<unsigned> config ){
         if(!ligne && !colonne) break;
     }
     
-    cout << "Points requis : " << config[2] << endl;
     while(nbCoup < config[1]){
+        cout << "Points requis : " << config[2] << " - Coups restants : " << config[1] - nbCoup  << endl;
         displayGrid(grille);
         cout << endl << "Saisir l'abscisse des coordonnees : " ;
         cin >> pos.abs;
@@ -142,13 +145,13 @@ void partie(vector<unsigned> config ){
         bool colonne = false;
 
         if(atLeastThreeInAColumn(grille,detecteur,nbHM)){
-            if(nbHM >= 3) nbPts = nbPts + (nbHM - 2) ;
+            nbPts = nbPts + (nbHM - 2) ;
             removalInColumn(grille,detecteur,nbHM);
             colonne = true;
         }
 
         if(atLeastThreeInARow(grille,detecteur,nbHM)){
-            if(nbHM >= 3) nbPts = nbPts + (nbHM - 2) ;
+            nbPts = nbPts + (nbHM - 2) ;
             removalInRow(grille,detecteur,nbHM);
             ligne = true;
         }
@@ -157,8 +160,37 @@ void partie(vector<unsigned> config ){
         }
 
         nbCoup++;
-        cout << "Nombre de points : " << nbPts << "/" << config[2] << " - Coups restants : " << config[1] - nbCoup  << endl;
+        cout << "Nombre de points : " << nbPts << "/" << config[2] << endl;
     }
-    if(nbPts >= config[2]) cout << "Victoire ! Avec " << nbPts << " points." << endl;
+    if(nbPts >= config[2]){
+        progression++; 
+        cout << "Victoire ! Avec " << nbPts << " points." << endl;
+    }
     else cout << "Défaite ! Avec " << nbPts << " points sur " << config[2] << endl;
+}
+
+int selectNiveau(){
+    string reponse = "";
+    while(true){
+        cout << "\nLes niveaux en vert sont les niveaux finis, en bleu les niveaux debloque et en blanc a debloquer plus tard \n";
+        
+        int i = 1;
+        couleur(KVert);
+        for(i; i<progression; i++) cout << i << ' ';
+
+        couleur(KBleu);
+        cout << i << ' ';
+        i++;
+
+        couleur(KReset);
+        for(i; i<=configNiveaux.size(); i++) cout << i << ' ';
+
+        cout << "\nSaisissez niveau que vous souhaitez jouer. \nEntrez 'exit' pour sortir. \n";
+        
+        cin >> reponse;
+
+        if(reponse == "exit") return 0;
+        if(1 <= stoi(reponse) && stoi(reponse) <= progression) return stoi(reponse);
+        else cout << "\n Valeur incorrecte. \n";
+    }
 }
