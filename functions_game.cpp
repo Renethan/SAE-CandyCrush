@@ -11,18 +11,16 @@ typedef vector <line> mat; // Type représentant la grille , aussi utilisé pour
 struct maPosition {
     unsigned abs;
     unsigned ord;
-};
+}; // une position dans la grille
 
 int progression = 1;
-mat configNiveaux = {{7,20,10,4},{6,15,5,5},{7,20,18,3},{8,25,10,8}};
-
-// une position dans la girlle
+mat configNiveaux = {{7,20,10,4,1},{6,15,10,5,2},{7,10,30,3,3},{8,25,10,8,4},{5,15,10,4,5}};
 
 void makeAMove (mat & grid, const maPosition & pos, const char & direction){
-    if(direction == 'Z') swap(grid[pos.ord][pos.abs], grid[pos.ord - 1][pos.abs]);
-    if(direction == 'S') swap(grid[pos.ord][pos.abs], grid[pos.ord + 1][pos.abs]);
-    if(direction == 'Q') swap(grid[pos.ord][pos.abs], grid[pos.ord][pos.abs - 1]);
-    if(direction == 'D') swap(grid[pos.ord][pos.abs], grid[pos.ord][pos.abs + 1]);
+    if(direction == 'Z' || direction == 'z') swap(grid[pos.ord][pos.abs], grid[pos.ord - 1][pos.abs]);
+    if(direction == 'S' || direction == 's') swap(grid[pos.ord][pos.abs], grid[pos.ord + 1][pos.abs]);
+    if(direction == 'Q' || direction == 'q') swap(grid[pos.ord][pos.abs], grid[pos.ord][pos.abs - 1]);
+    if(direction == 'D' || direction == 'd') swap(grid[pos.ord][pos.abs], grid[pos.ord][pos.abs + 1]);
 }
 
 bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany){
@@ -87,7 +85,16 @@ void removalInRow(mat & grid, const maPosition & pos, unsigned howMany){
     }
 }
 
-//Lance une partie. Prends en paramètre un vecteur 'config' <unsigned> dont les valeurs sont : [gridSize / nbCoups / nbPoints / nbBonbons]
+// Renvoie true si le caratère de direction est valide en fonction de la position du curseur et de la taille de la grille. Tolère les caractères minuscules et majuscules.
+bool isCorrectDirection(maPosition pos, size_t taille, char dir){
+    if(dir == 'Z' || dir == 'z') return pos.ord > 0;
+    if(dir == 'S' || dir == 's') return pos.ord < taille;
+    if(dir == 'Q' || dir == 'q') return pos.abs > 0;
+    if(dir == 'D' || dir == 'd') return pos.abs < taille;
+    return false;
+}
+
+//Lance une partie. Prends en paramètre un vecteur 'config' <unsigned> dont les valeurs sont : [gridSize / nbCoups / nbPoints / nbBonbons / idNiveau]
 void partie(vector<unsigned> config ){
     KNbcandies = config[3];
     mat grille;
@@ -123,17 +130,30 @@ void partie(vector<unsigned> config ){
     while(nbCoup < config[1]){
         cout << "Points requis : " << config[2] << " - Coups restants : " << config[1] - nbCoup  << endl;
         displayGrid(grille);
-        cout << endl << "Saisir l'abscisse des coordonnees : " ;
-        cin >> pos.abs;
-        cout << endl << "Saisir l'ordonnee des coordonnees : " ;
-        cin >> pos.ord;
 
-        cout << endl << "Entrez 'Z' , 'Q' , 'S' ou 'D' pour vous deplacer respectivement "
-                "vers le haut , a gauche , en bas ou a droite . " << endl;
-        cout << endl << "Saisir la direction : " ;
-        cin >> dir;
+        while(true){ // Saisie Abscisses
+            cout << endl << "Saisir l'abscisse des coordonnees : " ;
+            cin >> pos.abs;
+            if(0 <= pos.abs && pos.abs < grille.size()) break;
+            cout << "\nValeur incorrecte, reessayez\n";
+        }
+        while(true){ // Saisie Ordonnées
+            cout << endl << "Saisir l'ordonnee des coordonnees : " ;
+            cin >> pos.ord;
+            if(0 <= pos.ord && pos.ord < grille.size()) break;
+            cout << "\nValeur incorrecte, reessayez\n";
+        }
 
-        makeAMove(grille,pos,dir);
+        while(true){ // Saisie Direction
+            cout << endl << "Entrez 'Z' , 'Q' , 'S' ou 'D' pour vous deplacer respectivement "
+                    "vers le haut , a gauche , en bas ou a droite . " << endl;
+            cout << endl << "Saisir la direction : " ;
+            cin >> dir;
+            if(isCorrectDirection(pos,grille.size(),dir)) break;
+            cout << "\nValeur incorrecte, reessayez\n";
+        }
+
+        makeAMove(grille,pos,dir); // Déplacement
         
         nbHM = 0;
         detecteur.abs = 0;
@@ -141,40 +161,47 @@ void partie(vector<unsigned> config ){
         
 
         while(true){ // Vérif et élim des colonnes et des lignes
-        bool ligne = false;
-        bool colonne = false;
+            bool ligne = false;
+            bool colonne = false;
 
-        if(atLeastThreeInAColumn(grille,detecteur,nbHM)){
-            nbPts = nbPts + (nbHM - 2) ;
-            removalInColumn(grille,detecteur,nbHM);
-            colonne = true;
-        }
+            if(atLeastThreeInAColumn(grille,detecteur,nbHM)){ // Colonnes
+                cout << "\n Combo ! \n";
+                nbPts = nbPts + (nbHM - 2) ;
+                removalInColumn(grille,detecteur,nbHM);
+                colonne = true;
+                displayGrid(grille);
+                cout << "\n_ _ _ _ _ _\n";
+            }
 
-        if(atLeastThreeInARow(grille,detecteur,nbHM)){
-            nbPts = nbPts + (nbHM - 2) ;
-            removalInRow(grille,detecteur,nbHM);
-            ligne = true;
-        }
+            if(atLeastThreeInARow(grille,detecteur,nbHM)){ // Lignes
+                cout << "\n Combo ! \n";
+                nbPts = nbPts + (nbHM - 2) ;
+                removalInRow(grille,detecteur,nbHM);
+                ligne = true;
+                displayGrid(grille);
+                cout << "\n_ _ _ _ _ _\n";
+            }
 
-        if(!ligne && !colonne) break;
+            if(!ligne && !colonne) break;
         }
 
         nbCoup++;
         cout << "Nombre de points : " << nbPts << "/" << config[2] << endl;
     }
-    if(nbPts >= config[2]){
-        progression++; 
+    if(nbPts >= config[2]){ // Vérification victoire/défaite , si victoire vérifie si c'est le dernier niveau disponible -> monte la progression
+        if(config[4] == progression) progression++; 
         cout << "Victoire ! Avec " << nbPts << " points." << endl;
     }
     else cout << "Défaite ! Avec " << nbPts << " points sur " << config[2] << endl;
 }
 
+// Permet de sélectionner et éxécuter un niveau parmis la liste des niveaux disponible. Cette liste dépends de la progression
 int selectNiveau(){
     string reponse = "";
     while(true){
         cout << "\nLes niveaux en vert sont les niveaux finis, en bleu les niveaux debloque et en blanc a debloquer plus tard \n";
         
-        int i = 1;
+        int i = 1; // Affichage
         couleur(KVert);
         for(i; i<progression; i++) cout << i << ' ';
 
@@ -187,7 +214,7 @@ int selectNiveau(){
 
         cout << "\nSaisissez niveau que vous souhaitez jouer. \nEntrez 'exit' pour sortir. \n";
         
-        cin >> reponse;
+        cin >> reponse; // Sélection
 
         if(reponse == "exit") return 0;
         if(1 <= stoi(reponse) && stoi(reponse) <= progression) return stoi(reponse);
