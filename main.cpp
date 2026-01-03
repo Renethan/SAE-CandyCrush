@@ -12,7 +12,7 @@ int main(){
     int action = 0;
     cout << "  Bienvenue !";
     while(true){
-        cout << " Veuillez selectionner votre action :\n"
+        cout << " \nVeuillez selectionner votre action :\n"
             << "   1 - Jouer\n"
             << "   2 - Sauvegarder\n"
             << "   3 - Charger\n" 
@@ -20,10 +20,10 @@ int main(){
             << "   5 - Quitter\n";
         cin >> action;
         if(action == 1) selectNiveau(); // Jouer
-        if(action == 2) sauvegarde(); // Sauvegarde
-        if(action == 3) charge(); // Charge
-        if(action == 4) continue; // Guide
-        if(action == 5) break; // Quitter
+        else if(action == 2) sauvegarde(); // Sauvegarde
+        else if(action == 3) charge(); // Charge
+        else if(action == 4) continue; // Guide
+        else if(action == 5) break; // Quitter
         else cout << "\n Valeur incorecte , veuillez reesayer \n";
     }
     cout << "\n SORTIE \n";

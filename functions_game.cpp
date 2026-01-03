@@ -2,6 +2,7 @@
 #include <vector>
 #include "header.h"
 #include <fstream>
+#include <limits>
 
 using namespace std;
 
@@ -188,12 +189,13 @@ void partie(vector<unsigned> config ){
         nbCoup++;
         cout << "Nombre de points : " << nbPts << "/" << config[2] << endl;
     }
-    if(nbPts >= config[2]){ // Vérification victoire/défaite , si victoire vérifie si c'est le dernier niveau disponible -> monte la progression
-        if(config[4] == progression) progression++; 
+    if(nbPts >= config[2]){ // Vérification victoire/défaite
+        if(config[4] == progression) progression++; // Vérifie si c'est le dernier niveau disponible -> monte la progression
         cout << "Victoire ! Avec " << nbPts << " points." << endl;
     }
     else cout << "Défaite ! Avec " << nbPts << " points sur " << config[2] << endl;
 }
+
 
 // Permet de sélectionner et éxécuter un niveau parmis la liste des niveaux disponible. Cette liste dépends de la progression
 void selectNiveau(){
@@ -203,72 +205,91 @@ void selectNiveau(){
         
         int i = 1; // Affichage
         couleur(KVert);
-        for(i; i<progression; i++) cout << i << ' ';
+        for(i; i<progression && i<configNiveaux.size(); i++) cout << i << ' '; // Niveaux terminés
 
         couleur(KBleu);
-        cout << i << ' ';
+        cout << i << ' '; //Niveau disponible
         i++;
 
         couleur(KReset);
-        for(i; i<=configNiveaux.size(); i++) cout << i << ' ';
+        for(i; i<=configNiveaux.size(); i++) cout << i << ' '; // Niveaux non-débloqués
 
         cout << "\nSaisissez niveau que vous souhaitez jouer. \nEntrez 'exit' pour sortir. \n";
         
         cin >> reponse; // Sélection
         
-        if(reponse == "exit") break;
-        if(1 <= stoi(reponse) && stoi(reponse) <= progression) partie(configNiveaux[stoi(reponse)-1]);
-        else cout << "\n Valeur incorrecte. \n";
+        if(reponse == "exit") break; // Cas de sortie
+        if(1 <= stoi(reponse) && stoi(reponse) <= progression && stoi(reponse) <= configNiveaux.size()) partie(configNiveaux[stoi(reponse)-1]); // Lancement d'un niveau
+        else cout << "\n Valeur incorrecte. \n"; // Autre valeur incorecte
     }
 }
 
+
+// Enregistre la progression dans un fichier texte dont le nom est précisé au clavier par l'utilisateur
 void sauvegarde(){
     string nom;
     while(true){
-        cout << "\n Selectionnez le nom de la sauvegarde: \n";
-        cin >> nom;
+        cout << "\n Selectionnez le nom de la sauvegarde:  (n'entrez rien pour annuler) \n";
+
+        cin.clear(); // Vidage du buffer pour le getline
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        getline(cin,nom);
+        if(nom.empty()) break; // Annulation
+
         ifstream ifs("saves/"+nom+".txt");
-        if(ifs.is_open()){
+        if(ifs.is_open()){ // Si le fichier existe , on propose de le remplacer
             char rep;
             cout << "Le fichier existe deja, le remplacer ? [O/N] \n";
             cin >> rep;
-            if(rep == 'o' || rep == 'O'){
+
+            if(rep == 'o' || rep == 'O'){ // Oui -> On réécrit par dessus
                 ifs.close();
                 ofstream ofs("saves/"+nom+".txt");
                 ofs << progression;
                 ofs.close();
-                cout << "Progression sauvegardée dans le fichier " << nom << ".txt";
+                cout << "Progression sauvegardee dans le fichier " << nom << ".txt \n";
                 break;
-            } else if(rep == 'n' || rep == 'N'){
+
+            } else if(rep == 'n' || rep == 'N'){ // Non -> On annule
                 ifs.close();
-            } else cout << "\nValeur incorecte\n";
-        } else {
+                break;
+
+            } else cout << "\nValeur incorecte\n"; // Autre caractère entré -> on propose de réésayer
+
+        } else { // Sinon , on enregistre
             ifs.close();
             ofstream ofs("saves/"+nom+".txt");
             ofs << progression;
             ofs.close();
-            cout << "Progression sauvegardée dans le fichier " << nom << ".txt";
+            cout << "Progression sauvegardee dans le fichier " << nom << ".txt \n";
             break;
         }
     }
 }
 
+// Charge la progression depuis un fichier texte dont le nom est précisé au clavier par l'utilisateur
 void charge(){
     string nom;
     while(true){
-        cout << "\n Selectionnez le nom de la sauvegarde: \n";
-        cin >> nom;
+        cout << "\n Selectionnez le nom de la sauvegarde:  (n'entrez rien pour annuler) \n";
+        
+        cin.clear(); // Vidage du buffer pour le getline
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        getline(cin,nom);
+        if(nom.empty()) break;
+
         ifstream ifs("saves/"+nom+".txt");
-        if(ifs.is_open()){
+        if(ifs.is_open()){ // Si le fichier existe , on le charge
             string p;
             getline(ifs,p);
             progression = stoi(p);
             ifs.close();
-            cout << "La sauvegarde " << nom << ".txt a ete chargee avec succes !";
+            cout << "La sauvegarde " << nom << ".txt a ete chargee avec succes !\n";
             break;
-        } else {
+
+        } else { // Sinon, on propose de réésayer
             ifs.close();
-            cout << "La sauvegarde n'existe pas , veuillez reesayer";
+            cout << "La sauvegarde n'existe pas , veuillez reesayer\n";
         }
     }
 }
