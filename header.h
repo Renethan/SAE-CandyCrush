@@ -19,5 +19,6 @@ void removalInColumn(mat & grid, const maPosition & pos, unsigned howMany);
 void removalInRow(mat & grid, const maPosition & pos, unsigned howMany);
 bool isCorrectDirection(maPosition pos, size_t taille, char dir);
 void partie(const size_t & gridSize, unsigned coupMax , unsigned ptsRequis);
+void sauvegarde();
 
 #endif // HEADER_H

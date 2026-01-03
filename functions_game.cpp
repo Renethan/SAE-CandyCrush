@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "header.h"
-
+#include <fstream>
 
 using namespace std;
 
@@ -196,7 +196,7 @@ void partie(vector<unsigned> config ){
 }
 
 // Permet de sélectionner et éxécuter un niveau parmis la liste des niveaux disponible. Cette liste dépends de la progression
-int selectNiveau(){
+void selectNiveau(){
     string reponse = "";
     while(true){
         cout << "\nLes niveaux en vert sont les niveaux finis, en bleu les niveaux debloque et en blanc a debloquer plus tard \n";
@@ -215,9 +215,60 @@ int selectNiveau(){
         cout << "\nSaisissez niveau que vous souhaitez jouer. \nEntrez 'exit' pour sortir. \n";
         
         cin >> reponse; // Sélection
-
-        if(reponse == "exit") return 0;
-        if(1 <= stoi(reponse) && stoi(reponse) <= progression) return stoi(reponse);
+        
+        if(reponse == "exit") break;
+        if(1 <= stoi(reponse) && stoi(reponse) <= progression) partie(configNiveaux[stoi(reponse)-1]);
         else cout << "\n Valeur incorrecte. \n";
+    }
+}
+
+void sauvegarde(){
+    string nom;
+    while(true){
+        cout << "\n Selectionnez le nom de la sauvegarde: \n";
+        cin >> nom;
+        ifstream ifs("saves/"+nom+".txt");
+        if(ifs.is_open()){
+            char rep;
+            cout << "Le fichier existe deja, le remplacer ? [O/N] \n";
+            cin >> rep;
+            if(rep == 'o' || rep == 'O'){
+                ifs.close();
+                ofstream ofs("saves/"+nom+".txt");
+                ofs << progression;
+                ofs.close();
+                cout << "Progression sauvegardée dans le fichier " << nom << ".txt";
+                break;
+            } else if(rep == 'n' || rep == 'N'){
+                ifs.close();
+            } else cout << "\nValeur incorecte\n";
+        } else {
+            ifs.close();
+            ofstream ofs("saves/"+nom+".txt");
+            ofs << progression;
+            ofs.close();
+            cout << "Progression sauvegardée dans le fichier " << nom << ".txt";
+            break;
+        }
+    }
+}
+
+void charge(){
+    string nom;
+    while(true){
+        cout << "\n Selectionnez le nom de la sauvegarde: \n";
+        cin >> nom;
+        ifstream ifs("saves/"+nom+".txt");
+        if(ifs.is_open()){
+            string p;
+            getline(ifs,p);
+            progression = stoi(p);
+            ifs.close();
+            cout << "La sauvegarde " << nom << ".txt a ete chargee avec succes !";
+            break;
+        } else {
+            ifs.close();
+            cout << "La sauvegarde n'existe pas , veuillez reesayer";
+        }
     }
 }
