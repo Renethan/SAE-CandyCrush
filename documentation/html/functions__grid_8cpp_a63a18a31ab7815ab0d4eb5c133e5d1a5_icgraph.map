@@ -1,0 +1,15 @@
+<map id="KReset" name="KReset">
+<area shape="rect" id="Node000001" title=" " alt="" coords="514,21,581,49"/>
+<area shape="rect" id="Node000002" href="$functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="221,20,317,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="496,18,465,12,418,8,371,12,318,23,317,17,370,7,418,3,466,7,501,18"/>
+<area shape="rect" id="Node000005" href="$functions__grid_8cpp.html#a3972049c2195f66b5e0729f86d0060e6" title=" " alt="" coords="370,21,466,49"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="495,35,466,38,466,32,501,35"/>
+<area shape="rect" id="Node000006" href="$functions__game_8cpp.html#a633de7a42d8202f84130fa4db4ce462c" title=" " alt="" coords="216,72,322,100"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="501,51,466,63,391,76,323,84,322,79,391,71,465,58,496,52"/>
+<area shape="rect" id="Node000003" href="$functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,21,168,49"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="203,35,169,37,168,32,208,34"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,47,60,74"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="91,48,61,56,59,51,95,44"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="352,35,318,37,318,32,357,34"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="200,81,60,66,60,61,202,76"/>
+</map>
