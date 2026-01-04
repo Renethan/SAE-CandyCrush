@@ -1,18 +1,50 @@
 Bienvenue sur le guide du jeu !
 
-La premiere chose que vous voyez une fois dans le jeu est le menu;
-vous pouvez executer  differentes actions :
-    1 - Jouer : Lance le menu de selection de niveau ;
-    2 - Sauvegarder : Sauvegarde la progression dans un fichier texte ;
-    3 - Charger : Charge une progression precedement  sauvegardee ;
-    4 - Guide : Affiche ce guide ;
-    5 - Quitter  : Quitte le programme ;
+I - Execution du programme :
+    Pour executer ce programme, doucle-cliquez sur le fichier executable "main.exe" OU entrez et executez cette commande dans un terminal:
+        cd "CHEMIN VERS LE DOSSIER CONTENANT L'EXECUTABLE" ; if ($?) { g++ main.cpp -o main } ; if ($?) { .\main }
 
-I - Menu "Jouer" :
+    La premiere chose que vous voyez une fois dans le jeu est le menu; vous pouvez executer  differentes actions :
+        1 - Jouer : Lance le menu de selection de niveau ;
+        2 - Sauvegarder : Sauvegarde la progression dans un fichier texte ;
+        3 - Charger : Charge une progression precedement  sauvegardee ;
+        4 - Guide : Affiche ce guide ;
+        5 - Quitter  : Quitte le programme ;
+
+
+II - Menu "Jouer" :
     Dans ce menu, vous pouvez entrer un numero correspondant au niveau que vous souhaitez jouer:
     Les numeros bleus sont les niveaux finis, le numero en vert est le nouveau niveau disponible et les numeros en blancs sont les niveaux a debloquer.
     Vous pouvez entrer '0' pour jouer une partie personalisee : vous pouvez entrer la configuration que vous souhaitez ; n'avance pas la progression.
     Entrez "exit" pour revenir au menu principal.
 
     Une fois dans une partie, vous voyez la grille du niveau.
-    Pour effectuer des mouvements, vous devez entrer les coordonnees du bonbon (abscisses puis ordonnées)
+    Pour effectuer des mouvements, vous devez entrer les coordonnees du bonbon que vous voulez bouger (abscisses puis ordonnees),
+    les valeurs sont comprises entre 0 (le plus a gauche ou en haut) et la taille de la grille -1 (le plus a droite ou en bas); 
+    puis vous devez selectionner la direction du mouvement : Z pour le haut , S pour le bas , Q pour la gauche et D pour la droite.
+    Si vous entrez une valeur incorrecte : pas de panique, un message d'erreur vous le signalera et vous pourrez entrer a nouveau une valeur.
+    Si le coup que vous avez fais provoque un alignement de 3 bonbons identiques ou plus, ceux si disparaitront et les bonbons places 
+    en-dessous d'eux monteront, de nouveaux bonbons viennent par le bas pour combler le vide.
+    Si le mouvement des bonbons apres la suppression d'un alignement provoque un autre alignement, il est aussi contabilise : on repete l'action
+    jusqu'a l'absence totale d'alignements (lorsque cela arrive, la grille reapparait pour montrer les alignements provoques, ainsi que l'indicateur "Combo !").
+    Les points sont comptes en fonction du nombre de bonbons alignes : 3 bonbons alignes conferent 1 point, 4 bonbons alignes conferent 2 points 
+    et ainsi de suite en ajoutant a chaque fois 1 point par bonbons supplementaires.
+    La partie s'arrete lorsque le compteur de coups restant est a zero, la partie est gagnee si le nombre de points requis est atteint.
+    ! Pour les parties ou le nombres de bonbons et de 8 ou 9, les bonbons 8 sont de la meme couleur que les 1 et les 9 de la meme couleur que les 2 !
+
+
+III - Sauvegarder :
+    Dans ce menu, vous pourrez entrer le nom du fichier texte dans lequel vous voulez enregistrer votre progression.
+    Si ce fichier existe, vous avez le choix de le remplacer ou d'annuler.
+    ! Attention ! Entrez uniquement le nom du fichier SANS l'extension, il sera automatiquement au format .txt .
+    Si vous souhaitez annuler la sauvegarde et quitter le menu, n'entrez rien et appuyez sur la touche ENTREE.
+
+
+IV - Charger : 
+    Dans ce menu, vous pourrez entrer le nom du fichier texte depuis lequel vous voulez charger la progression.
+    Si ce fichier existe, il chargera la progression, sinon il renvoie un message d'erreur et vous propose de recommencer.
+    ! Attention ! Entrez uniquement le nom du fichier SANS l'extension, il sera automatiquement au format .txt .
+    Si vous souhaitez annuler le chargement et quitter le menu, n'entrez rien et appuyez sur la touche ENTREE.
+
+
+Amusez-vous bien !

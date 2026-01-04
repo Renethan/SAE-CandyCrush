@@ -71,7 +71,7 @@ void displayLine( line & ligne ){
 
         case 1:
 
-            couleur(KNoir);
+            couleur(KCyan);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -125,7 +125,7 @@ void displayLine( line & ligne ){
 
         case 7:
 
-            couleur(KCyan);
+            couleur(KReset);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -134,7 +134,7 @@ void displayLine( line & ligne ){
 
         case 8:
 
-            couleur(KReset);
+            couleur(KCyan);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
@@ -143,7 +143,7 @@ void displayLine( line & ligne ){
 
         case 9:
 
-            couleur(KNoir);
+            couleur(KRouge);
 
             cout << " " << "|"<< ligne[i] << "|" <<" ";
 
