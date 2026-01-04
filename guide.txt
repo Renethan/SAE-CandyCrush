@@ -1,0 +1,18 @@
+Bienvenue sur le guide du jeu !
+
+La premiere chose que vous voyez une fois dans le jeu est le menu;
+vous pouvez executer  differentes actions :
+    1 - Jouer : Lance le menu de selection de niveau ;
+    2 - Sauvegarder : Sauvegarde la progression dans un fichier texte ;
+    3 - Charger : Charge une progression precedement  sauvegardee ;
+    4 - Guide : Affiche ce guide ;
+    5 - Quitter  : Quitte le programme ;
+
+I - Menu "Jouer" :
+    Dans ce menu, vous pouvez entrer un numero correspondant au niveau que vous souhaitez jouer:
+    Les numeros bleus sont les niveaux finis, le numero en vert est le nouveau niveau disponible et les numeros en blancs sont les niveaux a debloquer.
+    Vous pouvez entrer '0' pour jouer une partie personalisee : vous pouvez entrer la configuration que vous souhaitez ; n'avance pas la progression.
+    Entrez "exit" pour revenir au menu principal.
+
+    Une fois dans une partie, vous voyez la grille du niveau.
+    Pour effectuer des mouvements, vous devez entrer les coordonnees du bonbon (abscisses puis ordonnées)

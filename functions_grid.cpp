@@ -168,7 +168,7 @@ void  displayGrid (const mat & grid){
 
         displayLine(ligne) ;
 
-        cout << endl ;
+        cout << '\n' ;
 
     }
 

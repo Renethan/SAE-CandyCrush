@@ -9,7 +9,7 @@ typedef vector <line> mat; // Type représentant la grille , aussi utilisé pour
 
 
 int main(){
-    int action = 0;
+    string action;
     cout << "  Bienvenue !";
     while(true){
         cout << " \nVeuillez selectionner votre action :\n"
@@ -19,13 +19,15 @@ int main(){
             << "   4 - Guide d'aide\n"
             << "   5 - Quitter\n";
         cin >> action;
-        if(action == 1) selectNiveau(); // Jouer
-        else if(action == 2) sauvegarde(); // Sauvegarde
-        else if(action == 3) charge(); // Charge
-        else if(action == 4) continue; // Guide
-        else if(action == 5) break; // Quitter
-        else cout << "\n Valeur incorecte , veuillez reesayer \n";
+        if(isInteger(action)){
+            if(stoi(action) == 1) selectNiveau(); // Jouer
+            else if(stoi(action) == 2) sauvegarde(); // Sauvegarde
+            else if(stoi(action) == 3) charge(); // Charge
+            else if(stoi(action) == 4) guide(); // Guide
+            else if(stoi(action) == 5) break; // Quitter
+            else cout << "\nValeur incorrecte, veuillez reesayer \n";
+        }else cout << "\nVous devez entrer le numero de l'action, veuillez reesayer \n";
     }
-    cout << "\n SORTIE \n";
+    cout << "\nAu revoir !\n";
     return 0;
 }
