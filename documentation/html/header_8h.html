@@ -109,27 +109,36 @@ $(function() {
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="functions__grid_8cpp_source.html">functions_grid.cpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="functions__game_8cpp_source.html">functions_game.cpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="functions__menu_8cpp_source.html">functions_menu.cpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for header.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h__incl.png" border="0" usemap="#aheader_8h" loading="lazy" alt=""/></div>
 <map name="aheader_8h" id="aheader_8h">
-<area shape="rect" title=" " alt="" coords="60,5,138,33"/>
-<area shape="rect" title=" " alt="" coords="59,157,123,184"/>
-<area shape="poly" title=" " alt="" coords="64,36,36,55,23,67,12,82,9,100,17,117,32,133,52,147,47,150,29,137,12,120,4,101,7,80,19,64,33,50,67,31"/>
-<area shape="rect" href="functions__grid_8cpp.html" title=" " alt="" coords="201,81,344,109"/>
-<area shape="poly" title=" " alt="" coords="123,31,223,74,218,76,123,36"/>
-<area shape="rect" href="functions__game_8cpp.html" title=" " alt="" coords="22,81,176,109"/>
-<area shape="poly" title=" " alt="" coords="93,31,93,66,88,65,91,36"/>
-<area shape="poly" title=" " alt="" coords="246,82,151,42,152,37,251,79"/>
-<area shape="poly" title=" " alt="" coords="243,109,138,153,136,148,237,109"/>
-<area shape="rect" title=" " alt="" coords="147,157,227,184"/>
-<area shape="poly" title=" " alt="" coords="260,108,215,149,212,144,255,110"/>
-<area shape="rect" title=" " alt="" coords="251,157,310,184"/>
-<area shape="poly" title=" " alt="" coords="276,107,280,142,275,140,272,111"/>
-<area shape="poly" title=" " alt="" coords="104,80,107,51,109,46,109,81"/>
-<area shape="poly" title=" " alt="" coords="100,107,97,142,92,140,96,111"/>
-<area shape="poly" title=" " alt="" coords="116,107,163,146,157,147,114,112"/>
+<area shape="rect" title=" " alt="" coords="262,5,340,33"/>
+<area shape="rect" title=" " alt="" coords="155,157,218,184"/>
+<area shape="poly" title=" " alt="" coords="274,32,242,55,214,83,199,112,191,143,187,140,194,110,210,79,238,51,269,35"/>
+<area shape="rect" href="functions__grid_8cpp.html" title=" " alt="" coords="5,81,149,109"/>
+<area shape="poly" title=" " alt="" coords="260,34,125,78,123,73,263,29"/>
+<area shape="rect" href="functions__game_8cpp.html" title=" " alt="" coords="224,81,378,109"/>
+<area shape="poly" title=" " alt="" coords="296,31,295,67,290,64,292,36"/>
+<area shape="rect" href="functions__menu_8cpp.html" title=" " alt="" coords="402,81,557,109"/>
+<area shape="poly" title=" " alt="" coords="326,31,429,75,424,76,326,36"/>
+<area shape="poly" title=" " alt="" coords="123,78,255,36,252,41,125,83"/>
+<area shape="poly" title=" " alt="" coords="97,107,157,147,152,149,96,112"/>
+<area shape="rect" title=" " alt="" coords="261,157,341,184"/>
+<area shape="poly" title=" " alt="" coords="117,107,249,150,245,153,117,112"/>
+<area shape="rect" title=" " alt="" coords="48,157,106,184"/>
+<area shape="poly" title=" " alt="" coords="79,107,80,142,74,140,75,111"/>
+<area shape="poly" title=" " alt="" coords="306,79,308,50,311,46,310,82"/>
+<area shape="poly" title=" " alt="" coords="283,108,221,151,218,146,278,110"/>
+<area shape="poly" title=" " alt="" coords="303,107,303,143,299,139,299,111"/>
+<area shape="poly" title=" " alt="" coords="452,81,354,42,355,36,458,80"/>
+<area shape="poly" title=" " alt="" coords="450,109,348,153,346,148,445,110"/>
+<area shape="rect" title=" " alt="" coords="490,157,563,184"/>
+<area shape="poly" title=" " alt="" coords="489,107,512,145,508,143,487,112"/>
+<area shape="rect" title=" " alt="" coords="408,157,466,184"/>
+<area shape="poly" title=" " alt="" coords="474,108,454,145,451,141,470,111"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -142,10 +151,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="poly" title=" " alt="" coords="206,40,107,83,105,78,201,38"/>
 <area shape="rect" href="functions__grid_8cpp.html" title=" " alt="" coords="184,81,328,109"/>
 <area shape="poly" title=" " alt="" coords="249,47,251,82,247,79,245,50"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="352,81,434,109"/>
-<area shape="poly" title=" " alt="" coords="294,38,371,81,366,81,293,43"/>
+<area shape="rect" href="functions__menu_8cpp.html" title=" " alt="" coords="352,81,506,109"/>
+<area shape="poly" title=" " alt="" coords="294,37,394,80,389,81,293,42"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="531,81,613,109"/>
+<area shape="poly" title=" " alt="" coords="311,30,519,78,533,84,528,84,518,84,310,36"/>
 <area shape="poly" title=" " alt="" coords="134,72,229,34,235,33,136,77"/>
 <area shape="poly" title=" " alt="" coords="262,64,261,36,265,32,267,67"/>
+<area shape="poly" title=" " alt="" coords="389,75,293,36,294,31,395,74"/>
 </map>
 </div>
 </div>
@@ -163,6 +175,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a15415c83fe5f136a0f841b16a8b33b79" id="r_a15415c83fe5f136a0f841b16a8b33b79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15415c83fe5f136a0f841b16a8b33b79">initGrid</a> (<a class="el" href="functions__game_8cpp.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp;grid, const size_t &amp;mat_size)</td></tr>
 <tr class="memitem:a3972049c2195f66b5e0729f86d0060e6" id="r_a3972049c2195f66b5e0729f86d0060e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3972049c2195f66b5e0729f86d0060e6">displayLine</a> (<a class="el" href="functions__game_8cpp.html#a4933e286520b3b8b86b2b7f27fd1959c">line</a> &amp;ligne)</td></tr>
 <tr class="memitem:ac0aacda61353cef121ada8614de65a16" id="r_ac0aacda61353cef121ada8614de65a16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0aacda61353cef121ada8614de65a16">displayGrid</a> (const <a class="el" href="functions__game_8cpp.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp;grid)</td></tr>
+<tr class="memitem:ae22b20325c2f3fcad23e830e6d166979" id="r_ae22b20325c2f3fcad23e830e6d166979"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae22b20325c2f3fcad23e830e6d166979">isInteger</a> (string chaine)</td></tr>
 <tr class="memitem:a128c26fbda3f47062ea1ab56e54ae54d" id="r_a128c26fbda3f47062ea1ab56e54ae54d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a128c26fbda3f47062ea1ab56e54ae54d">makeAMove</a> (<a class="el" href="functions__game_8cpp.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp;grid, const <a class="el" href="structma_position.html">maPosition</a> &amp;pos, const char &amp;direction)</td></tr>
 <tr class="memitem:a592d3742cedb5bd0462cc8ebe9e79131" id="r_a592d3742cedb5bd0462cc8ebe9e79131"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a592d3742cedb5bd0462cc8ebe9e79131">atLeastThreeInARow</a> (const <a class="el" href="functions__game_8cpp.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp;grid, <a class="el" href="structma_position.html">maPosition</a> &amp;pos, unsigned &amp;howMany)</td></tr>
 <tr class="memitem:aee7483c5715afce5b8d044329f2d9fdb" id="r_aee7483c5715afce5b8d044329f2d9fdb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee7483c5715afce5b8d044329f2d9fdb">atLeastThreeInAColumn</a> (const <a class="el" href="functions__game_8cpp.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp;grid, <a class="el" href="structma_position.html">maPosition</a> &amp;pos, unsigned &amp;howMany)</td></tr>
@@ -170,6 +183,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a4e37bf8b2ef1042c1631bf9d394ebd0d" id="r_a4e37bf8b2ef1042c1631bf9d394ebd0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e37bf8b2ef1042c1631bf9d394ebd0d">removalInRow</a> (<a class="el" href="functions__game_8cpp.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp;grid, const <a class="el" href="structma_position.html">maPosition</a> &amp;pos, unsigned howMany)</td></tr>
 <tr class="memitem:a48eafcb2a479d9e66dfc809a95a51a7f" id="r_a48eafcb2a479d9e66dfc809a95a51a7f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48eafcb2a479d9e66dfc809a95a51a7f">isCorrectDirection</a> (<a class="el" href="structma_position.html">maPosition</a> pos, size_t taille, char dir)</td></tr>
 <tr class="memitem:ada5c6a426ea6a7183993727cffeada58" id="r_ada5c6a426ea6a7183993727cffeada58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada5c6a426ea6a7183993727cffeada58">partie</a> (const size_t &amp;gridSize, unsigned coupMax, unsigned ptsRequis)</td></tr>
+<tr class="memitem:aad4f852e83f2426190c6f9c33d99c910" id="r_aad4f852e83f2426190c6f9c33d99c910"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad4f852e83f2426190c6f9c33d99c910">selectNiveau</a> ()</td></tr>
+<tr class="memitem:a14c45b3cb02ddebb0b008689bd2068bc" id="r_a14c45b3cb02ddebb0b008689bd2068bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14c45b3cb02ddebb0b008689bd2068bc">sauvegarde</a> ()</td></tr>
+<tr class="memitem:a31061818a5a2cf68539ca073374286d3" id="r_a31061818a5a2cf68539ca073374286d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31061818a5a2cf68539ca073374286d3">charge</a> ()</td></tr>
+<tr class="memitem:a93f4abe1053cbab5d3b0738cb0683c2a" id="r_a93f4abe1053cbab5d3b0738cb0683c2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93f4abe1053cbab5d3b0738cb0683c2a">guide</a> ()</td></tr>
+<tr class="memitem:a77b1467f686ff95f80bdee6ebba5c690" id="r_a77b1467f686ff95f80bdee6ebba5c690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77b1467f686ff95f80bdee6ebba5c690">niveauPerso</a> ()</td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="a4933e286520b3b8b86b2b7f27fd1959c" name="a4933e286520b3b8b86b2b7f27fd1959c"></a>
@@ -229,11 +247,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_aee7483c5715afce5b8d044329f2d9fdb_icgraph.png" border="0" usemap="#aheader_8h_aee7483c5715afce5b8d044329f2d9fdb_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_aee7483c5715afce5b8d044329f2d9fdb_icgraph" id="aheader_8h_aee7483c5715afce5b8d044329f2d9fdb_icgraph">
-<area shape="rect" title=" " alt="" coords="216,5,396,33"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,5,168,33"/>
-<area shape="poly" title=" " alt="" coords="198,19,169,22,169,17,203,19"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
-<area shape="poly" title=" " alt="" coords="89,20,60,22,60,17,95,18"/>
+<area shape="rect" title=" " alt="" coords="521,31,701,58"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,31,473,58"/>
+<area shape="poly" title=" " alt="" coords="503,45,473,47,473,42,508,44"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,5,364,33"/>
+<area shape="poly" title=" " alt="" coords="394,35,364,32,365,27,399,36"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,31,214,58"/>
+<area shape="poly" title=" " alt="" coords="394,45,214,47,214,42,399,44"/>
+<area shape="poly" title=" " alt="" coords="249,30,215,38,214,33,244,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,58"/>
+<area shape="poly" title=" " alt="" coords="89,45,60,47,60,42,95,44"/>
 </map>
 </div>
 
@@ -267,11 +290,43 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_a592d3742cedb5bd0462cc8ebe9e79131_icgraph.png" border="0" usemap="#aheader_8h_a592d3742cedb5bd0462cc8ebe9e79131_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_a592d3742cedb5bd0462cc8ebe9e79131_icgraph" id="aheader_8h_a592d3742cedb5bd0462cc8ebe9e79131_icgraph">
-<area shape="rect" title=" " alt="" coords="216,5,374,33"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,5,168,33"/>
-<area shape="poly" title=" " alt="" coords="198,19,169,22,168,17,203,19"/>
+<area shape="rect" title=" " alt="" coords="521,31,679,58"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,31,473,58"/>
+<area shape="poly" title=" " alt="" coords="502,45,473,47,473,42,508,44"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,5,364,33"/>
+<area shape="poly" title=" " alt="" coords="394,35,364,32,365,27,399,36"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,31,214,58"/>
+<area shape="poly" title=" " alt="" coords="394,45,214,47,214,42,399,44"/>
+<area shape="poly" title=" " alt="" coords="249,30,215,38,214,33,244,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,58"/>
+<area shape="poly" title=" " alt="" coords="89,45,60,47,60,42,95,44"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a31061818a5a2cf68539ca073374286d3" name="a31061818a5a2cf68539ca073374286d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31061818a5a2cf68539ca073374286d3">&#9670;&#160;</a></span>charge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void charge </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="header_8h_a31061818a5a2cf68539ca073374286d3_icgraph.png" border="0" usemap="#aheader_8h_a31061818a5a2cf68539ca073374286d3_icgraph" loading="lazy" alt=""/></div>
+<map name="aheader_8h_a31061818a5a2cf68539ca073374286d3_icgraph" id="aheader_8h_a31061818a5a2cf68539ca073374286d3_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,174,33"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
-<area shape="poly" title=" " alt="" coords="89,20,60,22,60,17,95,18"/>
+<area shape="poly" title=" " alt="" coords="90,20,60,22,60,17,95,18"/>
 </map>
 </div>
 
@@ -296,13 +351,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_a9d7e8af417b6d543da691e9c0e2f6f9f_icgraph.png" border="0" usemap="#aheader_8h_a9d7e8af417b6d543da691e9c0e2f6f9f_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_a9d7e8af417b6d543da691e9c0e2f6f9f_icgraph" id="aheader_8h_a9d7e8af417b6d543da691e9c0e2f6f9f_icgraph">
-<area shape="rect" title=" " alt="" coords="360,5,461,33"/>
-<area shape="rect" href="functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="216,5,312,33"/>
-<area shape="poly" title=" " alt="" coords="342,19,313,22,313,17,347,19"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,5,168,33"/>
-<area shape="poly" title=" " alt="" coords="198,19,169,22,168,17,203,19"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
-<area shape="poly" title=" " alt="" coords="89,20,60,22,60,17,95,18"/>
+<area shape="rect" title=" " alt="" coords="563,31,663,58"/>
+<area shape="rect" href="functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="418,31,515,58"/>
+<area shape="poly" title=" " alt="" coords="544,45,515,47,515,42,550,44"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="310,31,370,58"/>
+<area shape="poly" title=" " alt="" coords="400,45,371,47,371,42,405,44"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="160,5,262,33"/>
+<area shape="poly" title=" " alt="" coords="292,36,262,32,262,27,297,36"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="5,31,112,58"/>
+<area shape="poly" title=" " alt="" coords="294,47,112,47,112,42,295,42"/>
+<area shape="poly" title=" " alt="" coords="142,31,113,38,112,33,147,30"/>
 </map>
 </div>
 
@@ -327,19 +385,25 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_ae241cf89d39423f89bb8e65688e4c031_icgraph.png" border="0" usemap="#aheader_8h_ae241cf89d39423f89bb8e65688e4c031_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_ae241cf89d39423f89bb8e65688e4c031_icgraph" id="aheader_8h_ae241cf89d39423f89bb8e65688e4c031_icgraph">
-<area shape="rect" title=" " alt="" coords="514,21,584,49"/>
-<area shape="rect" href="functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="221,20,317,48"/>
-<area shape="poly" title=" " alt="" coords="496,17,465,12,418,8,371,12,318,23,317,17,370,7,418,3,466,7,501,17"/>
-<area shape="rect" href="functions__grid_8cpp.html#a3972049c2195f66b5e0729f86d0060e6" title=" " alt="" coords="370,21,466,49"/>
-<area shape="poly" title=" " alt="" coords="495,35,466,38,466,32,501,35"/>
-<area shape="rect" href="functions__game_8cpp.html#a633de7a42d8202f84130fa4db4ce462c" title=" " alt="" coords="216,72,322,100"/>
-<area shape="poly" title=" " alt="" coords="501,51,466,63,391,76,323,84,322,79,391,71,465,58,496,52"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,21,168,49"/>
-<area shape="poly" title=" " alt="" coords="203,35,169,37,168,32,208,34"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,47,60,74"/>
-<area shape="poly" title=" " alt="" coords="91,47,61,56,59,51,95,44"/>
-<area shape="poly" title=" " alt="" coords="352,35,318,37,318,32,357,34"/>
-<area shape="poly" title=" " alt="" coords="200,81,60,66,60,61,202,76"/>
+<area shape="rect" title=" " alt="" coords="808,81,879,109"/>
+<area shape="rect" href="functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="521,31,617,58"/>
+<area shape="poly" title=" " alt="" coords="811,71,787,59,760,47,723,40,686,37,618,40,617,35,686,32,724,35,761,42,790,54,816,72"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,107,214,134"/>
+<area shape="poly" title=" " alt="" coords="796,102,691,117,570,123,441,123,215,123,214,118,441,118,570,118,690,112,790,103"/>
+<area shape="rect" href="functions__grid_8cpp.html#a3972049c2195f66b5e0729f86d0060e6" title=" " alt="" coords="665,56,760,84"/>
+<area shape="poly" title=" " alt="" coords="790,85,761,82,761,76,796,85"/>
+<area shape="rect" href="functions__menu_8cpp.html#a93f4abe1053cbab5d3b0738cb0683c2a" title=" " alt="" coords="540,157,598,185"/>
+<area shape="poly" title=" " alt="" coords="810,117,761,142,717,154,673,163,598,172,598,167,672,158,716,149,759,137,804,118"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,31,473,58"/>
+<area shape="poly" title=" " alt="" coords="502,45,473,47,473,42,508,44"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,5,364,33"/>
+<area shape="poly" title=" " alt="" coords="394,36,365,32,364,27,399,35"/>
+<area shape="poly" title=" " alt="" coords="395,58,215,109,214,104,400,55"/>
+<area shape="poly" title=" " alt="" coords="279,40,263,53,184,108,181,104,261,49,274,43"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,132,60,160"/>
+<area shape="poly" title=" " alt="" coords="90,136,61,143,59,138,95,132"/>
+<area shape="poly" title=" " alt="" coords="647,59,617,56,617,50,652,59"/>
+<area shape="poly" title=" " alt="" coords="524,172,60,150,60,144,525,166"/>
 </map>
 </div>
 
@@ -396,11 +460,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_ac0aacda61353cef121ada8614de65a16_icgraph.png" border="0" usemap="#aheader_8h_ac0aacda61353cef121ada8614de65a16_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_ac0aacda61353cef121ada8614de65a16_icgraph" id="aheader_8h_ac0aacda61353cef121ada8614de65a16_icgraph">
-<area shape="rect" title=" " alt="" coords="216,5,312,33"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,5,168,33"/>
-<area shape="poly" title=" " alt="" coords="198,19,169,22,168,17,203,19"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
-<area shape="poly" title=" " alt="" coords="89,20,60,22,60,17,95,18"/>
+<area shape="rect" title=" " alt="" coords="521,31,617,58"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,31,473,58"/>
+<area shape="poly" title=" " alt="" coords="502,45,473,47,473,42,508,44"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,5,364,33"/>
+<area shape="poly" title=" " alt="" coords="394,35,364,32,365,27,399,36"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,31,214,58"/>
+<area shape="poly" title=" " alt="" coords="394,45,214,47,214,42,399,44"/>
+<area shape="poly" title=" " alt="" coords="249,30,215,38,214,33,244,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,58"/>
+<area shape="poly" title=" " alt="" coords="89,45,60,47,60,42,95,44"/>
 </map>
 </div>
 
@@ -451,11 +520,55 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_a3972049c2195f66b5e0729f86d0060e6_icgraph.png" border="0" usemap="#aheader_8h_a3972049c2195f66b5e0729f86d0060e6_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_a3972049c2195f66b5e0729f86d0060e6_icgraph" id="aheader_8h_a3972049c2195f66b5e0729f86d0060e6_icgraph">
-<area shape="rect" title=" " alt="" coords="360,5,456,33"/>
-<area shape="rect" href="functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="216,5,312,33"/>
-<area shape="poly" title=" " alt="" coords="342,19,313,22,312,17,348,19"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,5,168,33"/>
-<area shape="poly" title=" " alt="" coords="198,19,169,22,168,17,203,19"/>
+<area shape="rect" title=" " alt="" coords="563,31,658,58"/>
+<area shape="rect" href="functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="418,31,515,58"/>
+<area shape="poly" title=" " alt="" coords="545,45,515,47,515,42,550,44"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="310,31,370,58"/>
+<area shape="poly" title=" " alt="" coords="400,45,371,47,371,42,405,44"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="160,5,262,33"/>
+<area shape="poly" title=" " alt="" coords="292,36,262,32,262,27,297,36"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="5,31,112,58"/>
+<area shape="poly" title=" " alt="" coords="294,47,112,47,112,42,295,42"/>
+<area shape="poly" title=" " alt="" coords="142,31,113,38,112,33,147,30"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a93f4abe1053cbab5d3b0738cb0683c2a" name="a93f4abe1053cbab5d3b0738cb0683c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93f4abe1053cbab5d3b0738cb0683c2a">&#9670;&#160;</a></span>guide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void guide </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="header_8h_a93f4abe1053cbab5d3b0738cb0683c2a_cgraph.png" border="0" usemap="#aheader_8h_a93f4abe1053cbab5d3b0738cb0683c2a_cgraph" loading="lazy" alt=""/></div>
+<map name="aheader_8h_a93f4abe1053cbab5d3b0738cb0683c2a_cgraph" id="aheader_8h_a93f4abe1053cbab5d3b0738cb0683c2a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,57,63,85"/>
+<area shape="rect" href="functions__grid_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title=" " alt="" coords="111,5,181,33"/>
+<area shape="poly" title=" " alt="" coords="61,56,102,38,99,42,64,60"/>
+<area shape="rect" href="functions__grid_8cpp.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="112,57,180,85"/>
+<area shape="poly" title=" " alt="" coords="62,69,99,70,94,73,64,74"/>
+<area shape="rect" href="functions__grid_8cpp.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="117,109,174,137"/>
+<area shape="poly" title=" " alt="" coords="63,82,106,102,101,105,62,87"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="header_8h_a93f4abe1053cbab5d3b0738cb0683c2a_icgraph.png" border="0" usemap="#aheader_8h_a93f4abe1053cbab5d3b0738cb0683c2a_icgraph" loading="lazy" alt=""/></div>
+<map name="aheader_8h_a93f4abe1053cbab5d3b0738cb0683c2a_icgraph" id="aheader_8h_a93f4abe1053cbab5d3b0738cb0683c2a_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,165,33"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
 <area shape="poly" title=" " alt="" coords="89,20,60,22,60,17,95,18"/>
 </map>
@@ -486,11 +599,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_a15415c83fe5f136a0f841b16a8b33b79_icgraph.png" border="0" usemap="#aheader_8h_a15415c83fe5f136a0f841b16a8b33b79_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_a15415c83fe5f136a0f841b16a8b33b79_icgraph" id="aheader_8h_a15415c83fe5f136a0f841b16a8b33b79_icgraph">
-<area shape="rect" title=" " alt="" coords="216,5,286,33"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,5,168,33"/>
-<area shape="poly" title=" " alt="" coords="198,19,168,22,168,17,203,19"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
-<area shape="poly" title=" " alt="" coords="89,20,60,22,60,17,95,18"/>
+<area shape="rect" title=" " alt="" coords="521,31,591,58"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,31,473,58"/>
+<area shape="poly" title=" " alt="" coords="502,45,473,47,473,42,508,44"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,5,364,33"/>
+<area shape="poly" title=" " alt="" coords="394,35,364,32,365,27,399,36"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,31,214,58"/>
+<area shape="poly" title=" " alt="" coords="394,45,214,47,214,42,399,44"/>
+<area shape="poly" title=" " alt="" coords="249,30,215,38,214,33,244,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,58"/>
+<area shape="poly" title=" " alt="" coords="89,45,60,47,60,42,95,44"/>
 </map>
 </div>
 
@@ -524,11 +642,53 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_a48eafcb2a479d9e66dfc809a95a51a7f_icgraph.png" border="0" usemap="#aheader_8h_a48eafcb2a479d9e66dfc809a95a51a7f_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_a48eafcb2a479d9e66dfc809a95a51a7f_icgraph" id="aheader_8h_a48eafcb2a479d9e66dfc809a95a51a7f_icgraph">
-<area shape="rect" title=" " alt="" coords="216,5,357,33"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,5,168,33"/>
-<area shape="poly" title=" " alt="" coords="198,19,169,22,168,17,203,19"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
-<area shape="poly" title=" " alt="" coords="89,20,60,22,60,17,95,18"/>
+<area shape="rect" title=" " alt="" coords="521,31,662,58"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,31,473,58"/>
+<area shape="poly" title=" " alt="" coords="503,45,473,47,473,42,508,44"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,5,364,33"/>
+<area shape="poly" title=" " alt="" coords="394,35,364,32,365,27,399,36"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,31,214,58"/>
+<area shape="poly" title=" " alt="" coords="394,45,214,47,214,42,399,44"/>
+<area shape="poly" title=" " alt="" coords="249,30,215,38,214,33,244,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,58"/>
+<area shape="poly" title=" " alt="" coords="89,45,60,47,60,42,95,44"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae22b20325c2f3fcad23e830e6d166979" name="ae22b20325c2f3fcad23e830e6d166979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae22b20325c2f3fcad23e830e6d166979">&#9670;&#160;</a></span>isInteger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isInteger </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>chaine</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="header_8h_ae22b20325c2f3fcad23e830e6d166979_icgraph.png" border="0" usemap="#aheader_8h_ae22b20325c2f3fcad23e830e6d166979_icgraph" loading="lazy" alt=""/></div>
+<map name="aheader_8h_ae22b20325c2f3fcad23e830e6d166979_icgraph" id="aheader_8h_ae22b20325c2f3fcad23e830e6d166979_icgraph">
+<area shape="rect" title=" " alt="" coords="521,60,602,88"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,35,60,62"/>
+<area shape="poly" title=" " alt="" coords="527,50,502,37,472,26,414,14,354,9,294,9,236,13,133,28,61,44,59,39,132,22,235,7,294,3,354,3,415,9,473,20,504,33,532,51"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,85,364,113"/>
+<area shape="poly" title=" " alt="" coords="503,80,365,96,364,91,508,79"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,60,214,88"/>
+<area shape="poly" title=" " alt="" coords="515,93,462,113,398,128,330,134,295,133,261,127,218,111,183,91,184,86,220,106,263,122,296,127,330,129,398,122,460,108,510,94"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,35,473,62"/>
+<area shape="poly" title=" " alt="" coords="503,62,473,57,473,52,508,62"/>
+<area shape="poly" title=" " alt="" coords="244,88,215,85,215,80,249,88"/>
+<area shape="poly" title=" " alt="" coords="90,62,61,56,60,51,95,59"/>
+<area shape="poly" title=" " alt="" coords="400,65,351,87,350,82,395,66"/>
+<area shape="poly" title=" " alt="" coords="395,54,215,72,214,66,399,51"/>
 </map>
 </div>
 
@@ -562,9 +722,97 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_a128c26fbda3f47062ea1ab56e54ae54d_icgraph.png" border="0" usemap="#aheader_8h_a128c26fbda3f47062ea1ab56e54ae54d_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_a128c26fbda3f47062ea1ab56e54ae54d_icgraph" id="aheader_8h_a128c26fbda3f47062ea1ab56e54ae54d_icgraph">
-<area shape="rect" title=" " alt="" coords="216,5,318,33"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,5,168,33"/>
-<area shape="poly" title=" " alt="" coords="198,19,169,22,169,17,203,19"/>
+<area shape="rect" title=" " alt="" coords="521,31,623,58"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,31,473,58"/>
+<area shape="poly" title=" " alt="" coords="502,45,473,47,473,42,508,44"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,5,364,33"/>
+<area shape="poly" title=" " alt="" coords="394,35,364,32,365,27,399,36"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,31,214,58"/>
+<area shape="poly" title=" " alt="" coords="394,45,214,47,214,42,399,44"/>
+<area shape="poly" title=" " alt="" coords="249,30,215,38,214,33,244,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,58"/>
+<area shape="poly" title=" " alt="" coords="89,45,60,47,60,42,95,44"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a77b1467f686ff95f80bdee6ebba5c690" name="a77b1467f686ff95f80bdee6ebba5c690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b1467f686ff95f80bdee6ebba5c690">&#9670;&#160;</a></span>niveauPerso()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void niveauPerso </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="header_8h_a77b1467f686ff95f80bdee6ebba5c690_cgraph.png" border="0" usemap="#aheader_8h_a77b1467f686ff95f80bdee6ebba5c690_cgraph" loading="lazy" alt=""/></div>
+<map name="aheader_8h_a77b1467f686ff95f80bdee6ebba5c690_cgraph" id="aheader_8h_a77b1467f686ff95f80bdee6ebba5c690_cgraph">
+<area shape="rect" title=" " alt="" coords="5,189,108,217"/>
+<area shape="rect" href="functions__game_8cpp.html#ae22b20325c2f3fcad23e830e6d166979" title=" " alt="" coords="314,32,395,60"/>
+<area shape="poly" title=" " alt="" coords="75,187,154,131,207,99,263,70,301,58,297,61,265,75,210,103,157,136,79,190"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="156,215,216,242"/>
+<area shape="poly" title=" " alt="" coords="107,211,142,218,138,221,109,216"/>
+<area shape="poly" title=" " alt="" coords="188,213,196,184,210,145,232,105,262,70,279,60,300,53,296,56,281,64,266,75,236,108,215,147,201,185,193,215"/>
+<area shape="rect" href="functions__game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb" title=" " alt="" coords="264,84,444,112"/>
+<area shape="poly" title=" " alt="" coords="192,213,218,168,238,144,262,122,275,117,271,121,266,127,242,147,223,171,196,216"/>
+<area shape="rect" href="functions__game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131" title=" " alt="" coords="275,136,433,164"/>
+<area shape="poly" title=" " alt="" coords="203,212,231,193,263,174,284,168,279,171,265,179,234,197,207,216"/>
+<area shape="rect" href="functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="306,188,402,216"/>
+<area shape="poly" title=" " alt="" coords="215,221,293,210,289,213,217,226"/>
+<area shape="rect" href="functions__grid_8cpp.html#a15415c83fe5f136a0f841b16a8b33b79" title=" " alt="" coords="319,240,389,268"/>
+<area shape="poly" title=" " alt="" coords="216,230,306,245,301,248,217,236"/>
+<area shape="rect" href="functions__game_8cpp.html#a48eafcb2a479d9e66dfc809a95a51a7f" title=" " alt="" coords="284,292,425,320"/>
+<area shape="poly" title=" " alt="" coords="205,240,234,259,265,277,284,286,279,287,263,282,231,264,205,245"/>
+<area shape="rect" href="functions__game_8cpp.html#a128c26fbda3f47062ea1ab56e54ae54d" title=" " alt="" coords="303,344,405,372"/>
+<area shape="poly" title=" " alt="" coords="195,240,223,285,242,309,266,329,291,344,285,344,262,333,239,312,219,288,193,245"/>
+<area shape="rect" href="functions__game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f" title=" " alt="" coords="492,420,633,448"/>
+<area shape="poly" title=" " alt="" coords="191,240,200,272,214,310,235,349,266,381,301,397,355,410,479,428,474,428,354,415,300,402,262,385,231,352,209,312,195,274,189,245"/>
+<area shape="rect" href="functions__game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title=" " alt="" coords="295,445,413,473"/>
+<area shape="poly" title=" " alt="" coords="190,240,197,279,210,328,232,380,248,404,266,425,284,440,279,439,262,429,243,407,228,382,205,329,192,280,188,245"/>
+<area shape="rect" href="functions__grid_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title=" " alt="" coords="512,112,613,140"/>
+<area shape="poly" title=" " alt="" coords="402,186,443,173,518,145,513,148,445,178,404,191"/>
+<area shape="rect" href="functions__grid_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title=" " alt="" coords="689,5,759,33"/>
+<area shape="poly" title=" " alt="" coords="402,196,530,180,591,167,614,158,631,149,643,137,650,126,657,101,662,73,679,44,681,45,686,41,683,47,667,75,662,102,655,128,647,141,634,153,617,163,592,172,531,186,404,201"/>
+<area shape="rect" href="functions__grid_8cpp.html#a3972049c2195f66b5e0729f86d0060e6" title=" " alt="" coords="515,213,610,241"/>
+<area shape="poly" title=" " alt="" coords="402,205,502,219,497,220,403,210"/>
+<area shape="rect" href="functions__grid_8cpp.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="690,421,758,449"/>
+<area shape="poly" title=" " alt="" coords="403,210,445,226,517,269,568,311,616,355,682,406,690,413,684,412,679,411,613,359,564,315,514,273,443,231,403,215"/>
+<area shape="poly" title=" " alt="" coords="608,210,631,193,644,175,651,157,655,121,659,85,666,65,679,44,681,45,685,41,683,47,671,67,664,86,661,122,656,158,649,177,635,197,610,215"/>
+<area shape="rect" href="functions__grid_8cpp.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="694,57,754,85"/>
+<area shape="poly" title=" " alt="" coords="605,210,631,193,648,170,655,147,662,122,679,96,681,96,686,93,683,99,667,125,660,148,653,172,635,197,608,215"/>
+<area shape="rect" href="functions__grid_8cpp.html#aed31d4db92c112edda1291acad69dd00" title=" " alt="" coords="692,109,756,137"/>
+<area shape="poly" title=" " alt="" coords="599,210,631,193,655,171,679,148,683,148,688,145,682,152,659,175,634,197,602,215"/>
+<area shape="rect" href="functions__grid_8cpp.html#a1b010b9694f3acc35b02b0a667d99094" title=" " alt="" coords="690,161,758,189"/>
+<area shape="poly" title=" " alt="" coords="607,210,678,190,673,192,609,215"/>
+<area shape="rect" href="functions__grid_8cpp.html#a72fc9faf461c582bffc7491eb12ddb9a" title=" " alt="" coords="681,213,767,241"/>
+<area shape="poly" title=" " alt="" coords="610,225,668,227,663,228,611,230"/>
+<area shape="rect" href="functions__grid_8cpp.html#a2ce1342a3c5061b4504256f7ac7cfda6" title=" " alt="" coords="695,265,753,293"/>
+<area shape="poly" title=" " alt="" coords="608,239,682,265,677,265,608,244"/>
+<area shape="poly" title=" " alt="" coords="581,239,609,265,635,298,650,328,657,355,665,379,683,407,686,412,681,411,679,410,660,382,652,356,645,330,630,301,605,269,580,244"/>
+<area shape="rect" href="functions__grid_8cpp.html#a87aab004c1c22814beb8db1ddaa9f628" title=" " alt="" coords="688,317,760,345"/>
+<area shape="poly" title=" " alt="" coords="586,239,682,302,690,309,685,308,679,307,585,244"/>
+<area shape="rect" href="functions__grid_8cpp.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="695,369,752,397"/>
+<area shape="poly" title=" " alt="" coords="579,239,635,297,658,327,683,355,688,361,683,360,679,358,654,331,631,301,577,244"/>
+<area shape="poly" title=" " alt="" coords="414,449,474,444,479,444,414,455"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="header_8h_a77b1467f686ff95f80bdee6ebba5c690_icgraph.png" border="0" usemap="#aheader_8h_a77b1467f686ff95f80bdee6ebba5c690_icgraph" loading="lazy" alt=""/></div>
+<map name="aheader_8h_a77b1467f686ff95f80bdee6ebba5c690_icgraph" id="aheader_8h_a77b1467f686ff95f80bdee6ebba5c690_icgraph">
+<area shape="rect" title=" " alt="" coords="262,5,364,33"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,5,214,33"/>
+<area shape="poly" title=" " alt="" coords="244,19,215,22,215,17,249,19"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
 <area shape="poly" title=" " alt="" coords="89,20,60,22,60,17,95,18"/>
 </map>
@@ -626,14 +874,19 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_icgraph.png" border="0" usemap="#aheader_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_icgraph" id="aheader_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_icgraph">
-<area shape="rect" title=" " alt="" coords="382,5,523,33"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,5,168,33"/>
-<area shape="poly" title=" " alt="" coords="366,22,168,22,168,17,368,17"/>
-<area shape="rect" href="functions__game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title=" " alt="" coords="216,31,334,58"/>
-<area shape="poly" title=" " alt="" coords="370,31,335,39,335,33,365,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
-<area shape="poly" title=" " alt="" coords="90,20,61,22,60,17,94,18"/>
-<area shape="poly" title=" " alt="" coords="198,31,169,27,169,22,203,31"/>
+<area shape="rect" title=" " alt="" coords="687,31,827,58"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,31,473,58"/>
+<area shape="poly" title=" " alt="" coords="669,45,473,47,473,42,674,44"/>
+<area shape="rect" href="functions__game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title=" " alt="" coords="521,56,639,84"/>
+<area shape="poly" title=" " alt="" coords="675,56,640,64,639,59,669,57"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,5,364,33"/>
+<area shape="poly" title=" " alt="" coords="394,36,364,32,365,27,399,36"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,31,214,58"/>
+<area shape="poly" title=" " alt="" coords="395,46,214,47,214,42,399,43"/>
+<area shape="poly" title=" " alt="" coords="244,31,215,38,214,33,249,30"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,58"/>
+<area shape="poly" title=" " alt="" coords="90,46,61,47,60,42,94,43"/>
+<area shape="poly" title=" " alt="" coords="503,56,473,53,473,47,508,56"/>
 </map>
 </div>
 
@@ -677,9 +930,120 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="header_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_icgraph.png" border="0" usemap="#aheader_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_icgraph" loading="lazy" alt=""/></div>
 <map name="aheader_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_icgraph" id="aheader_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_icgraph">
-<area shape="rect" title=" " alt="" coords="216,5,334,33"/>
-<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,5,168,33"/>
-<area shape="poly" title=" " alt="" coords="198,19,169,22,169,17,203,19"/>
+<area shape="rect" title=" " alt="" coords="521,31,639,58"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,31,473,58"/>
+<area shape="poly" title=" " alt="" coords="502,45,473,47,473,42,508,44"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,5,364,33"/>
+<area shape="poly" title=" " alt="" coords="394,35,364,32,365,27,399,36"/>
+<area shape="rect" href="functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,31,214,58"/>
+<area shape="poly" title=" " alt="" coords="394,45,214,47,214,42,399,44"/>
+<area shape="poly" title=" " alt="" coords="249,30,215,38,214,33,244,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,58"/>
+<area shape="poly" title=" " alt="" coords="89,45,60,47,60,42,95,44"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14c45b3cb02ddebb0b008689bd2068bc" name="a14c45b3cb02ddebb0b008689bd2068bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14c45b3cb02ddebb0b008689bd2068bc">&#9670;&#160;</a></span>sauvegarde()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sauvegarde </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="header_8h_a14c45b3cb02ddebb0b008689bd2068bc_icgraph.png" border="0" usemap="#aheader_8h_a14c45b3cb02ddebb0b008689bd2068bc_icgraph" loading="lazy" alt=""/></div>
+<map name="aheader_8h_a14c45b3cb02ddebb0b008689bd2068bc_icgraph" id="aheader_8h_a14c45b3cb02ddebb0b008689bd2068bc_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,206,33"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
+<area shape="poly" title=" " alt="" coords="89,20,60,22,60,17,94,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aad4f852e83f2426190c6f9c33d99c910" name="aad4f852e83f2426190c6f9c33d99c910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad4f852e83f2426190c6f9c33d99c910">&#9670;&#160;</a></span>selectNiveau()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void selectNiveau </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="header_8h_aad4f852e83f2426190c6f9c33d99c910_cgraph.png" border="0" usemap="#aheader_8h_aad4f852e83f2426190c6f9c33d99c910_cgraph" loading="lazy" alt=""/></div>
+<map name="aheader_8h_aad4f852e83f2426190c6f9c33d99c910_cgraph" id="aheader_8h_aad4f852e83f2426190c6f9c33d99c910_cgraph">
+<area shape="rect" title=" " alt="" coords="5,175,112,202"/>
+<area shape="rect" href="functions__grid_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title=" " alt="" coords="835,345,905,373"/>
+<area shape="poly" title=" " alt="" coords="75,173,120,141,183,104,258,73,298,64,339,61,510,61,541,63,572,69,630,93,683,127,730,168,772,213,807,258,856,333,851,332,803,261,768,217,727,172,679,131,627,97,570,74,541,68,510,66,339,66,299,69,260,79,185,109,123,145,80,176"/>
+<area shape="rect" href="functions__game_8cpp.html#ae22b20325c2f3fcad23e830e6d166979" title=" " alt="" coords="468,100,549,128"/>
+<area shape="poly" title=" " alt="" coords="110,172,159,161,318,134,454,118,450,122,319,140,160,166,114,176"/>
+<area shape="rect" href="functions__grid_8cpp.html#a587a099b5228e39c74a525cb4ac5d786" title=" " alt="" coords="840,140,900,168"/>
+<area shape="poly" title=" " alt="" coords="63,174,76,145,96,109,123,73,158,42,204,19,244,10,339,10,510,10,590,6,655,3,685,5,716,11,750,23,788,42,811,60,831,81,859,126,853,125,827,84,808,64,786,47,748,28,715,16,684,10,655,8,590,12,510,15,339,15,245,15,206,24,161,47,127,76,100,112,80,147,68,175"/>
+<area shape="rect" href="functions__grid_8cpp.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title=" " alt="" coords="836,499,904,526"/>
+<area shape="poly" title=" " alt="" coords="63,200,88,290,109,352,138,416,175,476,196,503,220,527,246,547,275,562,305,572,339,575,510,575,597,570,682,557,819,527,824,526,683,562,597,575,510,581,339,581,304,577,272,567,243,552,216,531,192,507,170,479,133,418,104,353,83,292,62,206"/>
+<area shape="rect" href="functions__grid_8cpp.html#a72260f87613d24d0cd1e7c8f646ca5f5" title=" " alt="" coords="842,576,899,604"/>
+<area shape="poly" title=" " alt="" coords="60,200,63,267,75,362,87,414,105,467,129,516,162,560,201,597,240,616,283,624,339,626,510,626,598,623,686,615,824,598,829,597,686,620,598,628,510,631,339,631,283,630,238,621,198,601,158,564,125,519,100,469,82,416,69,363,58,267,59,206"/>
+<area shape="rect" href="functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="160,175,262,202"/>
+<area shape="poly" title=" " alt="" coords="111,186,146,187,142,190,114,191"/>
+<area shape="rect" href="functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="310,256,370,284"/>
+<area shape="poly" title=" " alt="" coords="109,200,297,255,293,259,109,206"/>
+<area shape="poly" title=" " alt="" coords="261,174,454,126,451,130,264,178"/>
+<area shape="poly" title=" " alt="" coords="234,200,307,247,302,249,234,205"/>
+<area shape="poly" title=" " alt="" coords="346,254,379,191,399,159,417,139,455,122,451,125,420,143,403,163,384,194,351,257"/>
+<area shape="rect" href="functions__game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb" title=" " alt="" coords="418,152,599,180"/>
+<area shape="poly" title=" " alt="" coords="350,254,378,222,417,190,433,184,429,188,420,195,382,226,354,258"/>
+<area shape="rect" href="functions__game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131" title=" " alt="" coords="429,204,588,232"/>
+<area shape="poly" title=" " alt="" coords="370,258,418,242,446,235,442,238,419,247,372,262"/>
+<area shape="rect" href="functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="460,409,557,437"/>
+<area shape="poly" title=" " alt="" coords="348,282,375,335,395,364,420,389,448,407,443,407,417,393,391,367,370,337,346,287"/>
+<area shape="rect" href="functions__grid_8cpp.html#a15415c83fe5f136a0f841b16a8b33b79" title=" " alt="" coords="473,308,544,336"/>
+<area shape="poly" title=" " alt="" coords="371,277,419,293,461,307,456,308,418,298,371,283"/>
+<area shape="rect" href="functions__game_8cpp.html#a48eafcb2a479d9e66dfc809a95a51a7f" title=" " alt="" coords="438,461,579,489"/>
+<area shape="poly" title=" " alt="" coords="344,282,353,317,366,361,388,407,403,428,420,447,427,454,422,453,417,451,399,432,384,410,361,363,348,319,343,287"/>
+<area shape="rect" href="functions__game_8cpp.html#a128c26fbda3f47062ea1ab56e54ae54d" title=" " alt="" coords="457,513,560,541"/>
+<area shape="poly" title=" " alt="" coords="343,282,348,326,360,384,382,445,399,474,420,499,445,516,440,516,417,503,395,477,378,448,355,385,343,327,341,287"/>
+<area shape="rect" href="functions__game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f" title=" " alt="" coords="647,281,787,309"/>
+<area shape="poly" title=" " alt="" coords="351,282,379,316,398,332,419,345,467,360,507,362,547,356,598,345,640,332,681,315,676,318,642,337,599,350,548,361,507,368,466,365,417,350,395,337,376,320,350,287"/>
+<area shape="rect" href="functions__game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title=" " alt="" coords="449,256,568,284"/>
+<area shape="poly" title=" " alt="" coords="370,267,436,269,431,271,372,273"/>
+<area shape="poly" title=" " alt="" coords="553,406,646,382,738,368,822,362,817,363,739,373,647,387,555,411"/>
+<area shape="poly" title=" " alt="" coords="557,431,600,448,615,458,624,468,634,477,648,485,692,499,738,507,823,514,818,515,737,512,691,504,646,490,630,481,620,471,611,462,597,452,557,437"/>
+<area shape="rect" href="functions__grid_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title=" " alt="" coords="667,396,767,424"/>
+<area shape="poly" title=" " alt="" coords="557,418,654,414,649,415,557,423"/>
+<area shape="rect" href="functions__grid_8cpp.html#a3972049c2195f66b5e0729f86d0060e6" title=" " alt="" coords="669,448,764,476"/>
+<area shape="poly" title=" " alt="" coords="557,430,656,450,651,451,557,435"/>
+<area shape="poly" title=" " alt="" coords="762,445,786,433,818,409,844,386,849,383,821,413,788,438,764,450"/>
+<area shape="poly" title=" " alt="" coords="764,448,785,433,797,415,809,388,831,319,862,185,866,182,836,320,814,390,802,418,789,437,766,453"/>
+<area shape="poly" title=" " alt="" coords="761,474,824,497,819,497,761,479"/>
+<area shape="poly" title=" " alt="" coords="736,474,843,567,838,566,734,479"/>
+<area shape="poly" title=" " alt="" coords="568,275,634,284,628,286,569,280"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="header_8h_aad4f852e83f2426190c6f9c33d99c910_icgraph.png" border="0" usemap="#aheader_8h_aad4f852e83f2426190c6f9c33d99c910_icgraph" loading="lazy" alt=""/></div>
+<map name="aheader_8h_aad4f852e83f2426190c6f9c33d99c910_icgraph" id="aheader_8h_aad4f852e83f2426190c6f9c33d99c910_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,214,33"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,33"/>
 <area shape="poly" title=" " alt="" coords="89,20,60,22,60,17,95,18"/>
 </map>

@@ -1,0 +1,15 @@
+<map id="isInteger" name="isInteger">
+<area shape="rect" id="Node000001" title=" " alt="" coords="521,60,602,88"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,35,60,62"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="527,50,502,37,472,26,414,14,354,9,294,9,236,13,133,28,61,44,59,39,132,22,235,7,294,3,354,3,415,9,473,20,504,33,532,51"/>
+<area shape="rect" id="Node000003" href="$functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="262,85,364,113"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="503,80,365,96,364,91,508,79"/>
+<area shape="rect" id="Node000004" href="$functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="108,60,214,88"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="515,93,462,113,398,128,330,134,295,133,261,127,218,111,183,91,184,86,220,106,263,122,296,127,330,129,398,122,460,108,510,94"/>
+<area shape="rect" id="Node000005" href="$functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="412,35,473,62"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="503,62,473,57,473,52,508,62"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="244,88,215,85,215,80,249,88"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="90,62,61,56,60,51,95,59"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="400,65,351,87,350,82,395,66"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="395,54,215,72,214,66,399,51"/>
+</map>
