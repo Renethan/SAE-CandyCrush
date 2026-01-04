@@ -1,14 +1,15 @@
 <map id="KBleu" name="KBleu">
-<area shape="rect" id="Node000001" title=" " alt="" coords="514,32,573,60"/>
-<area shape="rect" id="Node000002" href="$functions__grid_8cpp.html#a3972049c2195f66b5e0729f86d0060e6" title=" " alt="" coords="370,7,466,34"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="496,37,466,33,466,27,501,37"/>
-<area shape="rect" id="Node000006" href="$functions__game_8cpp.html#a633de7a42d8202f84130fa4db4ce462c" title=" " alt="" coords="216,57,322,85"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="501,50,323,69,322,64,496,50"/>
-<area shape="rect" id="Node000003" href="$functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="221,5,317,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="352,20,318,22,318,17,357,20"/>
-<area shape="rect" id="Node000004" href="$functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="108,7,168,34"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="203,20,169,23,168,18,208,19"/>
-<area shape="rect" id="Node000005" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,32,60,60"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="91,33,61,42,59,37,95,30"/>
-<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="200,66,60,51,60,46,202,61"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="706,81,765,109"/>
+<area shape="rect" id="Node000002" href="$functions__grid_8cpp.html#a3972049c2195f66b5e0729f86d0060e6" title=" " alt="" coords="563,56,658,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="688,86,658,82,658,77,694,86"/>
+<area shape="rect" id="Node000006" href="$functions__menu_8cpp.html#aad4f852e83f2426190c6f9c33d99c910" title=" " alt="" coords="5,56,112,84"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="693,102,589,117,468,123,339,123,276,120,213,111,108,87,109,82,214,105,276,114,339,118,468,118,589,111,688,102"/>
+<area shape="rect" id="Node000003" href="$functions__grid_8cpp.html#ac0aacda61353cef121ada8614de65a16" title=" " alt="" coords="418,56,515,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="545,70,515,72,515,67,550,70"/>
+<area shape="rect" id="Node000004" href="$functions__game_8cpp.html#a16735e72e91a8c018d37f1d857a9f314" title=" " alt="" coords="310,56,370,84"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="400,70,371,72,371,67,405,70"/>
+<area shape="rect" id="Node000005" href="$functions__menu_8cpp.html#a77b1467f686ff95f80bdee6ebba5c690" title=" " alt="" coords="160,5,262,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="293,53,248,36,248,31,298,52"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="294,72,112,72,112,67,295,67"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="151,40,103,58,101,53,155,37"/>
 </map>
