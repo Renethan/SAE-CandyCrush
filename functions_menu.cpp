@@ -6,25 +6,25 @@
 // Permet de creer son propre niveau (changer les paramètres)
 void niveauPerso(){
     string taille, nbCoups, nbPts, nbBonbons;
-    while(true){
+    while(true){ // Taille
         cout << "\nSelectionnez la taille de la grille :  [3 - 20]\n";
         cin >> taille;
         if(isInteger(taille) && stoi(taille) >= 3 && stoi(taille) <= 20) break;
         cout << "\nValeur incorrecte, reessayez\n";
     }
-    while(true){
+    while(true){ // Coups max
         cout << "\nSelectionnez le nombre de coups maximal :  [1 - 1000]\n";
         cin >> nbCoups;
         if(isInteger(nbCoups) && stoi(nbCoups) >= 1 && stoi(nbCoups) <= 1000) break;
         cout << "\nValeur incorrecte, reessayez\n";
     }
-    while(true){
+    while(true){ // Points requis
         cout << "\nSelectionnez le nombre de points requis :  [0 - 100000]\n";
         cin >> nbPts;
         if(isInteger(nbPts) && stoi(nbPts) >= 0 && stoi(nbPts) <= 100000) break;
         cout << "\nValeur incorrecte, reessayez\n";
     }
-    while(true){
+    while(true){ // Bonbons
         cout << "\nSelectionnez le nombre de bonbons differents :  [2 - 9]\n";
         cin >> nbBonbons;
         if(isInteger(nbBonbons) && stoi(nbBonbons) >= 2 && stoi(nbBonbons) <= 9) break;
